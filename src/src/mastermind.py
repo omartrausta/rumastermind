@@ -2,8 +2,6 @@
 import random
 
 colors = ["Gulur","Rauður","Grænn","Blár","Svartur","Hvítur","Fjólublár"]
-playColors = []
-
 
 def shuffleColors():
     random.shuffle(colors)
@@ -12,12 +10,11 @@ def gradePlayerChoice():
     return
 
 def colorsToPlay(numberOfColors):
-    playColors = colors[numberOfColors:]
+    return colors[numberOfColors:]
 
 def main():
     shuffleColors()
-    print colors
-    colorsToPlay(3)
-    print playColors
+    print colorsToPlay(3)
+
 
 if __name__== "__main__": main()
