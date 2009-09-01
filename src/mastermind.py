@@ -1,7 +1,8 @@
 # encoding: utf-8
 import random
 
-colors = ["Gulur","Rauður","Grænn","Blár","Svartur","Hvítur","Fjólublár"]
+
+colors = ["Gulur","Rauður","Grænn","Blár","Svartur","Hvítur","Fjólublár","Brúnn"]
 
 def shuffleColors():
     random.shuffle(colors)
