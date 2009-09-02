@@ -64,7 +64,10 @@ def guessColors(colorList, numberOfColors):
         if not inputError:
             inputOK = True
             print "input OK" + str(inputOK)
-    
+    for color in userRow:
+        guessRow.append(Color(color))
+    return guessRow
+
 
         
 
