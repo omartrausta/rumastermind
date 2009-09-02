@@ -1,9 +1,9 @@
 # encoding: utf-8
 import random
 
-class Mastermind:
-
-    colors = ["Gulur","Rauður","Grænn","Blár","Svartur","Hvítur","Fjólublár","Brúnn"]
+class Mastermind:  
+    def __init__(self,colors):
+        self.colors = colors
 
     def shuffleColors():
         random.shuffle(colors)
@@ -17,5 +17,10 @@ class Mastermind:
     def main():
         shuffleColors()
         print colorsToPlay(3)
-
-    if __name__== "__main__": main()
+    
+def main():
+    colors = ["Gulur","Rauður","Grænn","Blár","Svartur","Hvítur","Fjólublár","Brúnn"]
+    mm = Mastermind(colors)
+    print mm.colors
+    
+if __name__== "__main__": main()
