@@ -30,7 +30,17 @@ class Mastermind:
          return None
 
     def colorsToPlay(self):
-        self.colors = self.colors[0:self.numbersOfColors]
+        if (sameColor):
+            tmp = self.colors
+            self.colors = []
+            idx = 1
+            while (idx != self.numbersOfColors):
+                self.colors[idx-1] = tmp[random.randint(0, numbersOfColors-1)]
+                idx+1
+        else:
+            self.colors = self.colors[0:self.numbersOfColors]
+            
+                
     
     def addToRows(self,row):
         self.rows.remove(self.totalGuesses)
