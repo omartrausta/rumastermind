@@ -1,6 +1,14 @@
 # encoding: utf-8
 import random
 
+""" 
+    Mastermind game class, this class provides the most methods which are
+    required for the gameplay. It has colors list for the random generated
+    guess colors. It has rows which provides list of guessed colors and hints.
+    Number of color is just for how many colors are used in the game. Same color
+    is for allowing the same color twice or often. Total guesses holds the tries
+"""
+
 class Mastermind:  
     def __init__(self,colors,numberOfGuesses,numbersOfColors,sameColor=False):
         self.colors = colors
@@ -32,7 +40,8 @@ class Mastermind:
     def populateRows(self):
         for row in self.rows:
             print row
-    
+
+# TODO vantar að útfæra client kóða fyrir skipanalínuútgáfu    
 def main():
     colors = ["Gulur","Rauður","Grænn","Blár","Svartur","Hvítur","Fjólublár","Brúnn"]
     mm = Mastermind(colors,8,4)

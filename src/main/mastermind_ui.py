@@ -1,5 +1,7 @@
 import wx
 
+""" Mastermind ui class, implemented in the wxPython toolkit """
+
 ID_ABOUT=101
 ID_EXIT=110
 ID_NEW=100
