@@ -7,8 +7,8 @@ from main.row import Row
 class MastermindTestCase(unittest.TestCase):    
     gulur = Color("gulur", "path")
     raudur = Color("rauður", "path")
-    graenn = Color("graenn", "path")
-    blar = Color("blaur","path")
+    graenn = Color("grænn", "path")
+    blar = Color("blár","path")
     colors = [gulur,raudur,graenn,blar]
     numberOfColors=2
     numberOfGuesses=8
@@ -18,18 +18,17 @@ class MastermindTestCase(unittest.TestCase):
     expected = [blar,graenn]
      
     def testColorsToPlay(self):
-        result = Mastermind(self.colors,self.numberOfGuesses)
-        result = result.colorsToPlay(self.numberOfColors)
-        self.assertEqual(result, self.expected)
+        result = Mastermind(self.colors,self.numberOfGuesses,self.numberOfColors)
+        for color in result.colors:
+            print color.name
 
     def testGradePlayerChoice(self):
-        result = Mastermind(self.colors,self.numberOfGuesses)
-        result = result.gradePlayerChoice()
+        result = Mastermind(self.colors,self.numberOfGuesses,self.numberOfColors)
+        result = result.gradePlayerChoice(self.guess1)
         self.assertEqual(result,None)
         
     def testRows(self):
-        result = Mastermind(self.colors,self.numberOfGuesses)
-        result.colorsToPlay(self.numberOfColors)
+        result = Mastermind(self.colors,self.numberOfGuesses,self.numberOfColors)
         row1 = Row(self.guess1)
         result.addToRows(row1)
         row2 = Row(self.guess2)
