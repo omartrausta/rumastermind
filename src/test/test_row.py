@@ -1,11 +1,12 @@
-import unittest,row
+import unittest
+import main.row
  
 class rowTest(unittest.TestCase):
     
     colorList = []
     
     def testRow(self):
-        result = row.Row(self.colorList)
+        result = main.row.Row(self.colorList)
         print result.hintBlack
         print result.hintWhite 
         self.assertEqual(len(result.colorList),0)
