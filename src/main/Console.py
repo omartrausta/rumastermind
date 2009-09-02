@@ -11,7 +11,7 @@ def greetings():
     sameColorAllowedAnswers = ["y","n","Y","n","nei","já","j","J"]
     print ""
     print "--------------------------------"
-    print "    Velkominn í Mastermind"
+    print "    Velkominn í RuMastermind"
     print "--------------------------------"
     print ""
     while numberOfColors not in range(2,8):

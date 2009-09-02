@@ -27,7 +27,7 @@ class Mastermind:
     
     # TODO leikja lógík til þess að setja hvítu og svörtu pinna í röð
     def gradePlayerChoice(self,guessColors):
-         return None
+         pass
 
     def colorsToPlay(self):
         if (sameColor):
