@@ -17,19 +17,20 @@ class Mastermind:
         self.sameColor = sameColor
         self.totalGuesses = 0
         # Shufling the colors
-        self.shuffleColors()
+        #self.shuffleColors()
         # Taking setting how many colors to play
         self.colorsToPlay()
     
-    # TODO þarf að útfæra meiri shuffle lógík ef sami litur er True    
-    def shuffleColors(self):
-        random.shuffle(self.colors)
+#    # TODO þarf að útfæra meiri shuffle lógík ef sami litur er True    
+#    def shuffleColors(self):
+#        random.shuffle(self.colors)
     
     # TODO leikja lógík til þess að setja hvítu og svörtu pinna í röð
     def gradePlayerChoice(self,guessColors):
          pass
 
     def colorsToPlay(self):
+        random.shuffle(self.colors)
         if (self.sameColor):
             tmp = self.colors
             self.colors = []
@@ -39,8 +40,6 @@ class Mastermind:
                 idx+=1
         else:
             self.colors = self.colors[0:self.numbersOfColors]
-            
-                
     
     def addToRows(self,row):
         self.rows.remove(self.totalGuesses)
