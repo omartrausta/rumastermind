@@ -1,5 +1,5 @@
 import unittest
-import py.main.row
+import main.row
 
 class rowTest(unittest.TestCase):
     
