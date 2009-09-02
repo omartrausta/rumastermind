@@ -25,7 +25,7 @@ def greetings():
     return numberOfGuesses,numberOfColors,sameColor
 
 def makeColors():
-    black = Color("svartur")
+    black = Color("Svartur")
     green = Color("Grænn")
     brown = Color("Brúnn")
     purple = Color("Fjólublár")
@@ -35,6 +35,28 @@ def makeColors():
     yellow = Color("Gulur")
     colorList = [black,green,brown,purple,red,white,blue,yellow] 
     return colorList  
+
+def guessColors(colorList, numberOfColors):
+    colorStrList = []
+    guessRow = []
+    print "Veldu " + str(numberOfColors) + " með því að skrifa nafn litar í röð aðskilið með einu bili"
+    print "Litir í boði: Svartur Grænn Brúnn Fjólublár Rauður Hvítur Blár Gulur"
+    print ""
+    
+    #inputOK = False
+    #while not inputOK:
+    input = raw_input()
+    userRow = input.split(" ")
+    if len(userRow) != numberOfColors:
+        print "ekki réttur fjöldi af litum " + str(len(userRow)) + " í stað " + str(numberOfColors)
+    for color in colorList:
+        colorStrList.append(color.name)
+    for color in userRow:
+        if color not in colorStrList:
+            print "ekki réttur litur: " + color
+    #print userRow
+    #print userRow[1] 
+        
 
 def main():
     colorList = makeColors()
@@ -46,6 +68,7 @@ def main():
     print mastermindObj.sameColor
     print mastermindObj.totalGuesses
     print mastermindObj.rows
+    guessColors(colorList, userIntput[1])
     
     
 main() 
