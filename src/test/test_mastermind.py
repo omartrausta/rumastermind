@@ -9,8 +9,11 @@ class MastermindTestCase(unittest.TestCase):
     raudur = Color("rauður", "path")
     graenn = Color("grænn", "path")
     blar = Color("blár","path")
-    colors = [gulur,raudur,graenn,blar]
-    numberOfColors=2
+    svartur = Color("svartur", "path")
+    hvitur = Color("hvítur", "path")
+    fjolublar = Color("fjólublár", "path")
+    colors = [gulur,raudur,graenn,blar,svartur,hvitur,fjolublar]
+    numberOfColors=7
     numberOfGuesses=8
     sameColor=True
     guess1 = [gulur,graenn]
@@ -18,7 +21,7 @@ class MastermindTestCase(unittest.TestCase):
     expected = [blar,graenn]
      
     def testColorsToPlay(self):
-        result = Mastermind(self.colors,self.numberOfGuesses,self.numberOfColors)
+        result = Mastermind(self.colors,self.numberOfGuesses,self.numberOfColors,self.sameColor)
         for color in result.colors:
             print color.name
 
