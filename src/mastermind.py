@@ -4,23 +4,20 @@ import random
 class Mastermind:  
     def __init__(self,colors):
         self.colors = colors
-
-    def shuffleColors():
-        random.shuffle(colors)
+        self.shuffleColors()
+        
+    def shuffleColors(self):
+        random.shuffle(self.colors)
     
-    def gradePlayerChoice():
-        return
+    def gradePlayerChoice(self):
+         return None
 
-    def colorsToPlay(numberOfColors):
-        return colors[numberOfColors:]
-
-    def main():
-        shuffleColors()
-        print colorsToPlay(3)
+    def colorsToPlay(self,numberOfColors):
+        return self.colors[0:numberOfColors]
     
 def main():
     colors = ["Gulur","Rauður","Grænn","Blár","Svartur","Hvítur","Fjólublár","Brúnn"]
     mm = Mastermind(colors)
-    print mm.colors
+    print mm.colorsToPlay(3)
     
 if __name__== "__main__": main()
