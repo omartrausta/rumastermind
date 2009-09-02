@@ -10,9 +10,9 @@ def greetings():
     sameColorAnswer = ""
     sameColorAllowedAnswers = ["y","n","Y","n","nei","já","j","J"]
     print ""
-    print "--------------------------------"
-    print "    Velkominn í Mastermind"
-    print "--------------------------------"
+    print "---------------------------------"
+    print "     Velkominn í Mastermind"
+    print "---------------------------------"
     print ""
     while numberOfColors not in range(2,8):
         numberOfColors = int(raw_input("Veldu hversu marga liti þú vilt spila með? Veldu tölu á bili 2-10: "))
@@ -68,25 +68,30 @@ def guessColors(colorList, numberOfColors):
         guessRow.append(Color(color))
     return guessRow
 
-
         
 
 def main():
     colorList = makeColors()
     userIntput = greetings()
     mastermindObj = Mastermind(colorList,userIntput[0],userIntput[1],userIntput[2])
+    won,lost = False,False
 
     print mastermindObj.colors
     print mastermindObj.numbersOfColors
     print mastermindObj.sameColor
     print mastermindObj.totalGuesses
     print mastermindObj.rows
-    guessColors(colorList, userIntput[1])
-    
+    while not won and not lost:
+        guess = guessColors(colorList, userIntput[1])
+        won,lost = mastermindObj.gradePlayerChoice(guess)
+        if won:
+            print "Þú hefur unnið"
+        if lost:
+            print "Þú er hefur tapað"
     
 main() 
     
-    
+   
     
     
     
