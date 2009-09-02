@@ -30,13 +30,14 @@ class Mastermind:
          pass
 
     def colorsToPlay(self):
-        if (sameColor):
+        if (self.sameColor):
             tmp = self.colors
             self.colors = []
-            idx = 1
+            idx = 0
             while (idx != self.numbersOfColors):
-                self.colors[idx-1] = tmp[random.randint(0, numbersOfColors-1)]
-                idx+1
+                self.colors.insert(idx, tmp.__getitem__(random.randint(0, self.numbersOfColors-1)))
+                idx+=1
+                print idx
         else:
             self.colors = self.colors[0:self.numbersOfColors]
             
