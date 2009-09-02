@@ -12,11 +12,13 @@ class Mastermind:
         self.shuffleColors()
         # Taking setting how many colors to play
         self.colorsToPlay()
-        
+    
+    # TODO þarf að útfæra meiri shuffle lógík ef sami litur er True    
     def shuffleColors(self):
         random.shuffle(self.colors)
     
-    def gradePlayerChoice(self):
+    # TODO leikja lógík til þess að setja hvítu og svörtu pinna í röð
+    def gradePlayerChoice(self,guessColors):
          return None
 
     def colorsToPlay(self):
@@ -34,6 +36,7 @@ class Mastermind:
 def main():
     colors = ["Gulur","Rauður","Grænn","Blár","Svartur","Hvítur","Fjólublár","Brúnn"]
     mm = Mastermind(colors,8,4)
-    print mm.colors
+    for color in mm.colors:
+        print color.encode("utf-8")
     
 if __name__== "__main__": main()
