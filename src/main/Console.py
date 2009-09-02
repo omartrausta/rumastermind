@@ -11,7 +11,7 @@ def greetings():
     sameColorAllowedAnswers = ["y","n","Y","n","nei","já","j","J"]
     print ""
     print "--------------------------------"
-    print "    Velkominn í RuMastermind"
+    print "    Velkominn í Mastermind"
     print "--------------------------------"
     print ""
     while numberOfColors not in range(2,8):
@@ -43,19 +43,29 @@ def guessColors(colorList, numberOfColors):
     print "Litir í boði: Svartur Grænn Brúnn Fjólublár Rauður Hvítur Blár Gulur"
     print ""
     
-    #inputOK = False
-    #while not inputOK:
-    input = raw_input()
-    userRow = input.split(" ")
-    if len(userRow) != numberOfColors:
-        print "ekki réttur fjöldi af litum " + str(len(userRow)) + " í stað " + str(numberOfColors)
-    for color in colorList:
-        colorStrList.append(color.name)
-    for color in userRow:
-        if color not in colorStrList:
-            print "ekki réttur litur: " + color
-    #print userRow
-    #print userRow[1] 
+    inputOK = False
+    while not inputOK:
+        inputError = False
+        input = raw_input()
+        userRow = input.split(" ")
+        if len(userRow) != numberOfColors:
+            print "ekki réttur fjöldi af litum " + str(len(userRow)) + " litir í stað " + str(numberOfColors)
+            print "Veldu aftur liti: "
+            print ""
+            inputError = True
+        for color in colorList:
+            colorStrList.append(color.name)
+        for color in userRow:
+            if color not in colorStrList:
+                print "ekki réttur litur: " + color
+                print "Veldu aftur liti: "
+                print ""
+                inputError = True
+        if not inputError:
+            inputOK = True
+            print "input OK" + str(inputOK)
+    
+
         
 
 def main():
