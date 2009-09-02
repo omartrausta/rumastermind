@@ -37,7 +37,6 @@ class Mastermind:
             while (idx != self.numbersOfColors):
                 self.colors.insert(idx, tmp.__getitem__(random.randint(0, self.numbersOfColors-1)))
                 idx+=1
-                print idx
         else:
             self.colors = self.colors[0:self.numbersOfColors]
             
@@ -55,7 +54,7 @@ class Mastermind:
 # TODO vantar að útfæra client kóða fyrir skipanalínuútgáfu    
 def main():
     colors = ["Gulur","Rauður","Grænn","Blár","Svartur","Hvítur","Fjólublár","Brúnn"]
-    mm = Mastermind(colors,8,4)
+    mm = Mastermind(colors,8,4,True)
     for color in mm.colors:
         print color.encode("utf-8")
     
