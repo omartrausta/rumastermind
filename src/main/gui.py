@@ -8,70 +8,91 @@ import wx
 # begin wxGlade: extracode
 # end wxGlade
 
+colorArray = ['BLACK', 'GREEN', 'BROWN', 'PURPLE', 'RED', 'WHITE', 'BLUE', 'YELLOW', ]
+
 ID_B15 = 15
 
+
 class MyFrame2(wx.Frame):
+    
+    b_15Count = 0
+       
+    def increase(self, clickCount):
+        if clickCount == 7:
+            self.b_15Count = 0
+        else:
+            self.b_15Count = self.b_15Count + 1
+    
     def __init__(self, *args, **kwds):
         # begin wxGlade: MyFrame2.__init__
         kwds["style"] = wx.DEFAULT_FRAME_STYLE
         wx.Frame.__init__(self, *args, **kwds)
-        self.label_16 = wx.StaticText(self, -1, "label_16")
+        
+        #Panels
         self.panel_1 = wx.Panel(self, -1)
         self.panel_2 = wx.Panel(self, -1)
         self.panel_3 = wx.Panel(self, -1)
+        self.panel_4 = wx.Panel(self, -1)
+        self.panel_5 = wx.Panel(self, -1)
+        self.panel_6 = wx.Panel(self, -1)
+        
+        #Labels
         self.label_2 = wx.StaticText(self, -1, "label_2")
         self.label_3 = wx.StaticText(self, -1, "label_3")
+        self.label_4 = wx.StaticText(self, -1, "label_4")
+        self.label_5 = wx.StaticText(self, -1, "label_5")
+        self.label_6 = wx.StaticText(self, -1, "label_6")
+        self.label_7 = wx.StaticText(self, -1, "label_7")
+        self.label_8 = wx.StaticText(self, -1, "label_8")
+        self.label_9 = wx.StaticText(self, -1, "label_9")
+        self.label_12 = wx.StaticText(self, -1, "label_12")
+        self.label_13 = wx.StaticText(self, -1, "label_13")
+        self.label_14 = wx.StaticText(self, -1, "label_14")
+        self.label_15 = wx.StaticText(self, -1, "label_15")
+        self.label_17 = wx.StaticText(self, -1, "label_17")
+        self.label_10 = wx.StaticText(self, -1, "label_10")
+        self.label_11 = wx.StaticText(self, -1, "label_11")
+        self.label_1 = wx.StaticText(self, -1, "label_1")
+        self.label_16 = wx.StaticText(self, -1, "label_16")
+        
+        #Buttons
         self.button_30 = wx.Button(self, -1, "button_30")
         self.button_31 = wx.Button(self, -1, "button_31")
         self.button_32 = wx.Button(self, -1, "button_32")
         self.button_33 = wx.Button(self, -1, "button_33")
-        self.label_4 = wx.StaticText(self, -1, "label_4")
-        self.label_5 = wx.StaticText(self, -1, "label_5")
         self.button_26 = wx.Button(self, -1, "button_26")
         self.button_27 = wx.Button(self, -1, "button_27")
         self.button_28 = wx.Button(self, -1, "button_28")
-        self.button_29 = wx.Button(self, -1, "button_29")
-        self.label_6 = wx.StaticText(self, -1, "label_6")
-        self.label_7 = wx.StaticText(self, -1, "label_7")
+        self.button_29 = wx.Button(self, -1, "button_29")        
         self.button_22 = wx.Button(self, -1, "button_22")
         self.button_23 = wx.Button(self, -1, "button_23")
         self.button_24 = wx.Button(self, -1, "button_24")
-        self.button_25 = wx.Button(self, -1, "button_25")
-        self.label_8 = wx.StaticText(self, -1, "label_8")
-        self.label_9 = wx.StaticText(self, -1, "label_9")
+        self.button_25 = wx.Button(self, -1, "button_25")       
         self.button_18 = wx.Button(self, -1, "button_18")
         self.button_19 = wx.Button(self, -1, "button_19")
         self.button_20 = wx.Button(self, -1, "button_20")
-        self.button_21 = wx.Button(self, -1, "button_21")
-        self.label_10 = wx.StaticText(self, -1, "label_10")
-        self.label_11 = wx.StaticText(self, -1, "label_11")
+        self.button_21 = wx.Button(self, -1, "button_21")       
         self.button_14 = wx.Button(self, -1, "button_14")
-        self.button_15 = wx.Button(self, ID_B15, "")
-        self.Bind(wx.EVT_BUTTON, self.b15Click, id=ID_B15)
+        self.button_15 = wx.Button(self, ID_B15, "")       
         self.button_16 = wx.Button(self, -1, "button_16")
-        self.button_17 = wx.Button(self, -1, "button_17")
-        self.label_12 = wx.StaticText(self, -1, "label_12")
-        self.label_13 = wx.StaticText(self, -1, "label_13")
+        self.button_17 = wx.Button(self, -1, "button_17")       
         self.button_10 = wx.Button(self, -1, "button_10")
         self.button_11 = wx.Button(self, -1, "button_11")
         self.button_12 = wx.Button(self, -1, "button_12")
         self.button_13 = wx.Button(self, -1, "button_13")
-        self.label_14 = wx.StaticText(self, -1, "label_14")
-        self.label_15 = wx.StaticText(self, -1, "label_15")
-        self.label_17 = wx.StaticText(self, -1, "label_17")
-        self.panel_4 = wx.Panel(self, -1)
-        self.panel_5 = wx.Panel(self, -1)
-        self.panel_6 = wx.Panel(self, -1)
-        self.label_1 = wx.StaticText(self, -1, "label_1")
         self.button_9 = wx.Button(self, -1, "button_9")
+        
+        # Button Binder
+        self.Bind(wx.EVT_BUTTON, self.b15Click, id=ID_B15)      
 
         self.__set_properties()
         self.__do_layout()
         # end wxGlade
         
-    def b15Click(self,event):
-        self.button_15.SetBackgroundColour('YELLOW')
-            
+    def b15Click(self, event):
+        self.button_15.SetBackgroundColour(colorArray[self.b_15Count])
+        self.increase(self.b_15Count)
+        
         
         
         
