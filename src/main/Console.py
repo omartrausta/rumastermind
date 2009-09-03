@@ -39,6 +39,7 @@ def makeColors():
 def guessColors(colorList, numberOfColors):
     colorStrList = []
     guessRow = []
+    print ""
     print "Veldu " + str(numberOfColors) + " liti með því að skrifa nafn litar í röð aðskilið með einu bili"
     print "Litir í boði: Svartur Grænn Brúnn Fjólublár Rauður Hvítur Blár Gulur"
     print ""
@@ -63,7 +64,6 @@ def guessColors(colorList, numberOfColors):
                 inputError = True
         if not inputError:
             inputOK = True
-            print "input OK" + str(inputOK)
     for color in userRow:
         guessRow.append(Color(color))
     return guessRow
@@ -76,18 +76,10 @@ def main():
     mastermindObj = Mastermind(colorList,userIntput[0],userIntput[1],userIntput[2])
     won,lost = False,False
 
-    print mastermindObj.colors
-    print mastermindObj.numbersOfColors
-    print mastermindObj.sameColor
-    print mastermindObj.totalGuesses
-    print mastermindObj.rows
     while not won and not lost:
         guess = guessColors(colorList, userIntput[1])
         won,lost = mastermindObj.gradePlayerChoice(guess)
-        if won:
-            print "Þú hefur unnið"
-        if lost:
-            print "Þú er hefur tapað"
+        print ""
         print "----------------------------------------------------------------------------"
         print "                            Staðan á borði er"
         print "----------------------------------------------------------------------------"
@@ -99,12 +91,19 @@ def main():
                 print "\t | Hint:\t".rjust(2),
                 print "Fjöldi Hvítra : " + str(row.hintWhite),
                 print " Fjöldi Svartra : " + str(row.hintBlack)
+        print ""        
         print "----------------------------------------------------------------------------"
         print ""
-        print "Þú átt " + str(mastermindObj.guessesLeft()) + " ágiskanir eftir"
-        print "Giskaðu aftur"
-        print ""
-    
+        if won:
+            print "Þú hefur unnið"
+            break
+        if lost:
+            print "Þú er hefur tapað"
+            break
+        if not won and not lost:
+            print "Þú átt " + str(mastermindObj.guessesLeft()) + " ágiskanir eftir"
+            print "Giskaðu aftur"
+            print ""
     
     
 main() 
