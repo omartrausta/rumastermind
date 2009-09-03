@@ -50,7 +50,7 @@ class Mastermind:
     # Ef number of guess og total guess eru jöfn og current lita röð ekki rétt 
     
     def guessesLeft(self):
-        return self.totalGuesses - self.numberOfGuesses
+        return self.numberOfGuesses - self.totalGuesses 
     
     def populateRows(self):
         for row in self.rows:
