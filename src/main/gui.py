@@ -40,38 +40,42 @@ ID_B33 = 33
 
 class MyFrame2(wx.Frame):
     
-    b_9Count = 0
-    b_10Count = 0
-    b_11Count = 0
-    b_12Count = 0
-    b_13Count = 0
-    b_14Count = 0
-    b_15Count = 0
-    b_16Count = 0
-    b_17Count = 0
-    b_18Count = 0
-    b_19Count = 0
-    b_20Count = 0
-    b_21Count = 0
-    b_22Count = 0
-    b_23Count = 0
-    b_24Count = 0
-    b_25Count = 0
-    b_26Count = 0
-    b_27Count = 0
-    b_28Count = 0
-    b_29Count = 0
-    b_30Count = 0
-    b_31Count = 0
-    b_32Count = 0
-    b_33Count = 0
+    countDict = {9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0,26:0,27:0,28:0,29:0,30:0,31:0,32:0,33:0}
+ 
+    #===========================================================================
+    # b_9Count = 0
+    # b_10Count = 0
+    # b_11Count = 0
+    # b_12Count = 0
+    # b_13Count = 0
+    # b_14Count = 0
+    # b_15Count = 0
+    # b_16Count = 0
+    # b_17Count = 0
+    # b_18Count = 0
+    # b_19Count = 0
+    # b_20Count = 0
+    # b_21Count = 0
+    # b_22Count = 0
+    # b_23Count = 0
+    # b_24Count = 0
+    # b_25Count = 0
+    # b_26Count = 0
+    # b_27Count = 0
+    # b_28Count = 0
+    # b_29Count = 0
+    # b_30Count = 0
+    # b_31Count = 0
+    # b_32Count = 0
+    # b_33Count = 0
+    #===========================================================================
     
        
     def increase(self, clickCount):
-        if clickCount == 7:
-            self.b_15Count = 0
+        if self.countDict[clickCount] == 7:
+            self.countDict[clickCount] = 0
         else:
-            self.b_15Count = self.b_15Count + 1
+            self.countDict[clickCount] = self.countDict[clickCount] + 1
     
     def __init__(self, *args, **kwds):
         # begin wxGlade: MyFrame2.__init__
@@ -165,104 +169,104 @@ class MyFrame2(wx.Frame):
         # end wxGlade
         
     def b9Click(self, event):
-        self.button_9.SetBackgroundColour(colorArray[self.b_9Count])
-        self.increase(self.b_9Count)
+        self.button_9.SetBackgroundColour(colorArray[self.countDict[9]])
+        self.increase(9)
     
     def b10Click(self, event):
-        self.button_10.SetBackgroundColour(colorArray[self.b_10Count])
-        self.increase(self.b_10Count)
+        self.button_10.SetBackgroundColour(colorArray[self.countDict[10]])
+        self.increase(10)
         
     def b11Click(self, event):
-        self.button_11.SetBackgroundColour(colorArray[self.b_11Count])
-        self.increase(self.b_11Count)
+        self.button_11.SetBackgroundColour(colorArray[self.countDict[11]])
+        self.increase(11)
         
     def b12Click(self, event):
-        self.button_12.SetBackgroundColour(colorArray[self.b_12Count])
-        self.increase(self.b_12Count)
+        self.button_12.SetBackgroundColour(colorArray[self.countDict[12]])
+        self.increase(12)
     
     def b13Click(self, event):
-        self.button_13.SetBackgroundColour(colorArray[self.b_13Count])
-        self.increase(self.b_13Count)
+        self.button_13.SetBackgroundColour(colorArray[self.countDict[13]])
+        self.increase(13)
     
     def b14Click(self, event):
-        self.button_14.SetBackgroundColour(colorArray[self.b_14Count])
-        self.increase(self.b_14Count)
+        self.button_14.SetBackgroundColour(colorArray[self.countDict[14]])
+        self.increase(14)
     
     def b15Click(self, event):
-        self.button_15.SetBackgroundColour(colorArray[self.b_15Count])
-        self.increase(self.b_15Count)
+        self.button_15.SetBackgroundColour(colorArray[self.countDict[15]])
+        self.increase(15)
     
     def b16Click(self, event):
-        self.button_16.SetBackgroundColour(colorArray[self.b_16Count])
-        self.increase(self.b_16Count)
+        self.button_16.SetBackgroundColour(colorArray[self.countDict[16]])
+        self.increase(16)
     
     def b17Click(self, event):
-        self.button_17.SetBackgroundColour(colorArray[self.b_17Count])
-        self.increase(self.b_16Count)
+        self.button_17.SetBackgroundColour(colorArray[self.countDict[17]])
+        self.increase(17)
     
     def b18Click(self, event):
-        self.button_18.SetBackgroundColour(colorArray[self.b_18Count])
-        self.increase(self.b_18Count)
+        self.button_18.SetBackgroundColour(colorArray[self.countDict[18]])
+        self.increase(18)
     
     def b19Click(self, event):
-        self.button_19.SetBackgroundColour(colorArray[self.b_19Count])
-        self.increase(self.b_19Count)
+        self.button_19.SetBackgroundColour(colorArray[self.countDict[19]])
+        self.increase(19)
     
     def b20Click(self, event):
-        self.button_20.SetBackgroundColour(colorArray[self.b_20Count])
-        self.increase(self.b_20Count)
+        self.button_20.SetBackgroundColour(colorArray[self.countDict[20]])
+        self.increase(20)
         
     def b21Click(self, event):
-        self.button_21.SetBackgroundColour(colorArray[self.b_21Count])
-        self.increase(self.b_21Count)
+        self.button_21.SetBackgroundColour(colorArray[self.countDict[21]])
+        self.increase(21)
         
     def b22Click(self, event):
-        self.button_22.SetBackgroundColour(colorArray[self.b_22Count])
-        self.increase(self.b_22Count)
+        self.button_22.SetBackgroundColour(colorArray[self.countDict[22]])
+        self.increase(22)
     
     def b23Click(self, event):
-        self.button_23.SetBackgroundColour(colorArray[self.b_23Count])
-        self.increase(self.b_23Count)
+        self.button_23.SetBackgroundColour(colorArray[self.countDict[23]])
+        self.increase(23)
     
     def b24Click(self, event):
-        self.button_24.SetBackgroundColour(colorArray[self.b_24Count])
-        self.increase(self.b_24Count)
+        self.button_24.SetBackgroundColour(colorArray[self.countDict[24]])
+        self.increase(24)
     
     def b25Click(self, event):
-        self.button_25.SetBackgroundColour(colorArray[self.b_25Count])
-        self.increase(self.b_25Count)
+        self.button_25.SetBackgroundColour(colorArray[self.countDict[25]])
+        self.increase(25)
     
     def b26Click(self, event):
-        self.button_26.SetBackgroundColour(colorArray[self.b_26Count])
-        self.increase(self.b_26Count)
+        self.button_26.SetBackgroundColour(colorArray[self.countDict[26]])
+        self.increase(26)
         
     def b27Click(self, event):
-        self.button_27.SetBackgroundColour(colorArray[self.b_27Count])
-        self.increase(self.b_27Count)
+        self.button_27.SetBackgroundColour(colorArray[self.countDict[27]])
+        self.increase(27)
     
     def b28Click(self, event):
-        self.button_28.SetBackgroundColour(colorArray[self.b_28Count])
-        self.increase(self.b_28Count)
+        self.button_28.SetBackgroundColour(colorArray[self.countDict[28]])
+        self.increase(28)
     
     def b29Click(self, event):
-        self.button_29.SetBackgroundColour(colorArray[self.b_29Count])
-        self.increase(self.b_29Count)
+        self.button_29.SetBackgroundColour(colorArray[self.countDict[29]])
+        self.increase(29)
     
     def b30Click(self, event):
-        self.button_30.SetBackgroundColour(colorArray[self.b_30Count])
-        self.increase(self.b_30Count)
+        self.button_30.SetBackgroundColour(colorArray[self.countDict[30]])
+        self.increase(30)
     
     def b31Click(self, event):
-        self.button_31.SetBackgroundColour(colorArray[self.b_31Count])
-        self.increase(self.b_31Count)
+        self.button_31.SetBackgroundColour(colorArray[self.countDict[31]])
+        self.increase(31)
         
     def b32Click(self, event):
-        self.button_32.SetBackgroundColour(colorArray[self.b_32Count])
-        self.increase(self.b_32Count)
+        self.button_32.SetBackgroundColour(colorArray[self.countDict[32]])
+        self.increase(32)
         
     def b33Click(self, event):
-        self.button_33.SetBackgroundColour(colorArray[self.b_33Count])
-        self.increase(self.b_33Count)
+        self.button_33.SetBackgroundColour(colorArray[self.countDict[33]])
+        self.increase(33)
     
 
     def __set_properties(self):
