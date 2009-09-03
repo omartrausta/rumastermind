@@ -12,7 +12,7 @@ import random
 class Mastermind:  
     def __init__(self,colors,numberOfGuesses,numbersOfColors,sameColor=False):
         self.colors = colors
-        self.rows = range(numberOfGuesses)
+        self.rows = range(numberOfGuesses+1)
         self.numbersOfColors = numbersOfColors
         self.sameColor = sameColor
         self.totalGuesses = 0
