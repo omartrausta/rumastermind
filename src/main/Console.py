@@ -14,9 +14,9 @@ def greetings():
     print "     Velkominn í Mastermind"
     print "---------------------------------"
     print ""
-    while numberOfColors not in range(2,8):
-        numberOfColors = int(raw_input("Veldu hversu marga liti þú vilt spila með? Veldu tölu á bili 2-10: "))
-    while numberOfGuesses not in range(2,10):
+    while numberOfColors not in range(2,9):
+        numberOfColors = int(raw_input("Veldu hversu marga liti þú vilt spila með? Veldu tölu á bili 2-8: "))
+    while numberOfGuesses not in range(2,11):
         numberOfGuesses = int(raw_input("Hversu margar tilraunir viltu að séu leyfðar? Veldu tölu á bili 2-10 "))
     while sameColorAnswer not in sameColorAllowedAnswers:
         sameColorAnswer = raw_input("Viltu að sami litur sé leyfður oftar en einu sinni? [y] fyrri já eða [n] fyrir nei: ")
@@ -39,7 +39,7 @@ def makeColors():
 def guessColors(colorList, numberOfColors):
     colorStrList = []
     guessRow = []
-    print "Veldu " + str(numberOfColors) + " með því að skrifa nafn litar í röð aðskilið með einu bili"
+    print "Veldu " + str(numberOfColors) + " liti með því að skrifa nafn litar í röð aðskilið með einu bili"
     print "Litir í boði: Svartur Grænn Brúnn Fjólublár Rauður Hvítur Blár Gulur"
     print ""
     
@@ -88,6 +88,22 @@ def main():
             print "Þú hefur unnið"
         if lost:
             print "Þú er hefur tapað"
+        print "------------------------------------------------------"
+        print "        Staðan á borði er"
+        print "------------------------------------------------------"
+        print ""
+        for row in mastermindObj.rows:
+            if type(row) != int:
+                for color in row.colorList:
+                    print str(color.name).rjust(10),
+                print " | Result:\t",
+                print "Fjöldi Hvítra :" + str(row.hintWhite),
+                print " Fjöldi Svartra :" + str(row.hintBlack)
+        print "------------------------------------------------------"
+        print ""
+        
+    
+    
     
 main() 
     
