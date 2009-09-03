@@ -10,7 +10,7 @@ import wx
 # begin wxGlade: extracode
 # end wxGlade
 
-colorArray = ['BLACK', 'GREEN', 'BROWN', 'PURPLE', 'RED', 'WHITE', 'BLUE', 'YELLOW', ]
+colorArray = ['','BLACK', 'GREEN', 'BROWN', 'PURPLE', 'RED', 'WHITE', 'BLUE', 'YELLOW', ]
 
 ID_B9 = 9
 ID_B10 = 10
@@ -43,7 +43,7 @@ ID_B33 = 33
 class MyFrame2(wx.Frame):
     
     countDict = {9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0,26:0,27:0,28:0,29:0,30:0,31:0,32:0,33:0}
-    
+    buttonMap = {0:[10,11,12,13],1:[14,15,16,17],2:[18,19,20,21],3:[22,23,24,25],4:[26,27,28,29],5:[30,31,32,33]}
     rowCount = 0 
        
     def increase(self, clickCount):
@@ -147,6 +147,10 @@ class MyFrame2(wx.Frame):
         
         count = self.rowCount
         
+        buttonRow = self.buttonMap[count]
+        for button in buttonRow:
+            pass   
+        
         m = [Color('WHITE'),Color('BLUE'),Color('BLACK'),Color('YELLOW')]
         return m   
         
@@ -166,15 +170,15 @@ class MyFrame2(wx.Frame):
         won,lost = False,False
         colorList = self.makeColors()
         master = Mastermind(colorList, 6, 4)
-        m = self.getPlayerGuess()
-        won,lost = master.gradePlayerChoice(m)
+        guess = self.getPlayerGuess()
+        won,lost = master.gradePlayerChoice(guess)
         litur = self.button_10.BackgroundColour
         strLitur = wx.TheColourDatabase.FindName(litur)
         print strLitur
         print won,lost
     
     def b10Click(self, event):
-        self.button_10.SetBackgroundColour(colorArray[self.countDict[10]])
+        self.button_10.SetBackgroundColour(colorArray[self.countDict[10]+1])
         self.increase(10)
         
     def b11Click(self, event):
