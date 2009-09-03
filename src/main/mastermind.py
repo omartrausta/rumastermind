@@ -61,10 +61,10 @@ class Mastermind:
         row1 = Row(guessColors, black, white)
         self.addToRows(row1)  
         # ef jafnt tapar player
-        if (self.totalGuesses == self.numberOfGuesses) and not (self.colors.__eq__(guessColors)):
+        if (self.totalGuesses == self.numberOfGuesses) and not (self.colors == guessColors):
             return False,True
         # ef eins player vinnur
-        if (self.colors.__eq__(guessColors)):
+        if self.numbersOfColors == black:
             return True,False
    
        
