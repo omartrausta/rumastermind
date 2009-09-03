@@ -45,7 +45,7 @@ class MyFrame2(wx.Frame):
         self.label_10 = wx.StaticText(self, -1, "label_10")
         self.label_11 = wx.StaticText(self, -1, "label_11")
         self.button_14 = wx.Button(self, -1, "button_14")
-        self.button_15 = wx.Button(self, -1, "button_15")
+        self.button_15 = wx.Button(self, -1, "")
         self.button_16 = wx.Button(self, -1, "button_16")
         self.button_17 = wx.Button(self, -1, "button_17")
         self.label_12 = wx.StaticText(self, -1, "label_12")
@@ -70,6 +70,8 @@ class MyFrame2(wx.Frame):
     def __set_properties(self):
         # begin wxGlade: MyFrame2.__set_properties
         self.SetTitle("frame_3")
+        self.button_15.SetBackgroundColour('RED')
+        self.button_16.SetBackgroundColour('BLACK')
         # end wxGlade
 
     def __do_layout(self):
