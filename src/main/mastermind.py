@@ -58,7 +58,7 @@ class Mastermind:
             self.rows.append(row)
         else:
             self.rows.insert(self.totalGuesses,row)
-        self.totalGuesses =+ 1
+        self.totalGuesses += 1
     
     # Ef number of guess og total guess eru jöfn og current lita röð ekki rétt 
     
@@ -72,10 +72,9 @@ class Mastermind:
 # TODO vantar að útfæra client kóða fyrir skipanalínuútgáfu    
 def main():
     colors = ["Gulur","Rauður","Grænn","Blár","Svartur","Hvítur","Fjólublár","Brúnn"]
-    mm = Mastermind(colors,8,4,True)
-    for color in mm.colors:
-        print color.encode("utf-8")
-        
+    mm = Mastermind(colors,1,4,True)
+#    for color in mm.colors:
+#        print color.encode("utf-8")       
     print mm.populateRows()
     
 if __name__== "__main__": main()
