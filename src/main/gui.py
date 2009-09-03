@@ -10,12 +10,62 @@ import wx
 
 colorArray = ['BLACK', 'GREEN', 'BROWN', 'PURPLE', 'RED', 'WHITE', 'BLUE', 'YELLOW', ]
 
+ID_B9 = 9
+ID_B15 = 10
+ID_B15 = 11
+ID_B15 = 12
+ID_B15 = 13
+ID_B15 = 14
 ID_B15 = 15
+ID_B15 = 16
+ID_B15 = 17
+ID_B15 = 18
+ID_B15 = 19
+ID_B15 = 20
+ID_B15 = 21
+ID_B15 = 22
+ID_B15 = 23
+ID_B15 = 24
+ID_B15 = 25
+ID_B15 = 26
+ID_B15 = 27
+ID_B15 = 28
+ID_B15 = 29
+ID_B15 = 30
+ID_B15 = 31
+ID_B15 = 32
+ID_B15 = 33
+
 
 
 class MyFrame2(wx.Frame):
     
+    b_9Count = 0
+    b_10Count = 0
+    b_11Count = 0
+    b_12Count = 0
+    b_13Count = 0
+    b_14Count = 0
     b_15Count = 0
+    b_16Count = 0
+    b_17Count = 0
+    b_18Count = 0
+    b_19Count = 0
+    b_20Count = 0
+    b_21Count = 0
+    b_22Count = 0
+    b_23Count = 0
+    b_24Count = 0
+    b_25Count = 0
+    b_26Count = 0
+    b_27Count = 0
+    b_28Count = 0
+    b_29Count = 0
+    b_30Count = 0
+    b_31Count = 0
+    b_32Count = 0
+    b_33Count = 0
+    
        
     def increase(self, clickCount):
         if clickCount == 7:
@@ -56,34 +106,59 @@ class MyFrame2(wx.Frame):
         self.label_16 = wx.StaticText(self, -1, "label_16")
         
         #Buttons
-        self.button_30 = wx.Button(self, -1, "button_30")
-        self.button_31 = wx.Button(self, -1, "button_31")
-        self.button_32 = wx.Button(self, -1, "button_32")
-        self.button_33 = wx.Button(self, -1, "button_33")
-        self.button_26 = wx.Button(self, -1, "button_26")
-        self.button_27 = wx.Button(self, -1, "button_27")
-        self.button_28 = wx.Button(self, -1, "button_28")
-        self.button_29 = wx.Button(self, -1, "button_29")        
-        self.button_22 = wx.Button(self, -1, "button_22")
-        self.button_23 = wx.Button(self, -1, "button_23")
-        self.button_24 = wx.Button(self, -1, "button_24")
-        self.button_25 = wx.Button(self, -1, "button_25")       
-        self.button_18 = wx.Button(self, -1, "button_18")
-        self.button_19 = wx.Button(self, -1, "button_19")
-        self.button_20 = wx.Button(self, -1, "button_20")
-        self.button_21 = wx.Button(self, -1, "button_21")       
-        self.button_14 = wx.Button(self, -1, "button_14")
-        self.button_15 = wx.Button(self, ID_B15, "")       
-        self.button_16 = wx.Button(self, -1, "button_16")
-        self.button_17 = wx.Button(self, -1, "button_17")       
-        self.button_10 = wx.Button(self, -1, "button_10")
-        self.button_11 = wx.Button(self, -1, "button_11")
-        self.button_12 = wx.Button(self, -1, "button_12")
-        self.button_13 = wx.Button(self, -1, "button_13")
-        self.button_9 = wx.Button(self, -1, "button_9")
+        self.button_9 = wx.Button(self, ID_B9, "")
+        self.button_10 = wx.Button(self, ID_B10, "")
+        self.button_11 = wx.Button(self, ID_B11, "")
+        self.button_12 = wx.Button(self, ID_B12, "")
+        self.button_13 = wx.Button(self, ID_B13, "")
+        self.button_14 = wx.Button(self, ID_B14, "")
+        self.button_15 = wx.Button(self, ID_B15, "")
+        self.button_16 = wx.Button(self, ID_B16, "")        
+        self.button_17 = wx.Button(self, ID_B17, "")
+        self.button_18 = wx.Button(self, ID_B18, "")
+        self.button_19 = wx.Button(self, ID_B19, "")
+        self.button_20 = wx.Button(self, ID_B20, "")       
+        self.button_21 = wx.Button(self, ID_B21, "")
+        self.button_22 = wx.Button(self, ID_B22, "")
+        self.button_23 = wx.Button(self, ID_B23, "")
+        self.button_24 = wx.Button(self, ID_B24, "")       
+        self.button_25 = wx.Button(self, ID_B25, "")
+        self.button_26 = wx.Button(self, ID_B26, "")       
+        self.button_27 = wx.Button(self, ID_B27, "")
+        self.button_28 = wx.Button(self, ID_B28, "")       
+        self.button_29 = wx.Button(self, ID_B29, "")
+        self.button_30 = wx.Button(self, ID_B30, "")
+        self.button_31 = wx.Button(self, ID_B31, "")
+        self.button_32 = wx.Button(self, ID_B32, "")
+        self.button_33 = wx.Button(self, ID_B33, "")
         
         # Button Binder
-        self.Bind(wx.EVT_BUTTON, self.b15Click, id=ID_B15)      
+        self.Bind(wx.EVT_BUTTON, self.b9Click, id=ID_B9)
+        self.Bind(wx.EVT_BUTTON, self.b10Click, id=ID_B10) 
+        self.Bind(wx.EVT_BUTTON, self.b11Click, id=ID_B11) 
+        self.Bind(wx.EVT_BUTTON, self.b12Click, id=ID_B12) 
+        self.Bind(wx.EVT_BUTTON, self.b13Click, id=ID_B13) 
+        self.Bind(wx.EVT_BUTTON, self.b14Click, id=ID_B14) 
+        self.Bind(wx.EVT_BUTTON, self.b15Click, id=ID_B15) 
+        self.Bind(wx.EVT_BUTTON, self.b16Click, id=ID_B16) 
+        self.Bind(wx.EVT_BUTTON, self.b17Click, id=ID_B17) 
+        self.Bind(wx.EVT_BUTTON, self.b18Click, id=ID_B18) 
+        self.Bind(wx.EVT_BUTTON, self.b19Click, id=ID_B19) 
+        self.Bind(wx.EVT_BUTTON, self.b20Click, id=ID_B20) 
+        self.Bind(wx.EVT_BUTTON, self.b21Click, id=ID_B21) 
+        self.Bind(wx.EVT_BUTTON, self.b22Click, id=ID_B22) 
+        self.Bind(wx.EVT_BUTTON, self.b23Click, id=ID_B23) 
+        self.Bind(wx.EVT_BUTTON, self.b24Click, id=ID_B24) 
+        self.Bind(wx.EVT_BUTTON, self.b25Click, id=ID_B25) 
+        self.Bind(wx.EVT_BUTTON, self.b26Click, id=ID_B26) 
+        self.Bind(wx.EVT_BUTTON, self.b27Click, id=ID_B27) 
+        self.Bind(wx.EVT_BUTTON, self.b28Click, id=ID_B28) 
+        self.Bind(wx.EVT_BUTTON, self.b29Click, id=ID_B29) 
+        self.Bind(wx.EVT_BUTTON, self.b30Click, id=ID_B30) 
+        self.Bind(wx.EVT_BUTTON, self.b31Click, id=ID_B31) 
+        self.Bind(wx.EVT_BUTTON, self.b32Click, id=ID_B32) 
+        self.Bind(wx.EVT_BUTTON, self.b33Click, id=ID_B33) 
+ 
 
         self.__set_properties()
         self.__do_layout()
