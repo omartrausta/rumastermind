@@ -10,9 +10,9 @@ def greetings():
     sameColorAnswer = ""
     sameColorAllowedAnswers = ["y","n","Y","n","nei","já","j","J"]
     print ""
-    print "---------------------------------"
-    print "     Velkominn í Mastermind"
-    print "---------------------------------"
+    print "----------------------------------------------------------------------------"
+    print "                        Velkominn í Mastermind"
+    print "----------------------------------------------------------------------------"
     print ""
     while numberOfColors not in range(2,9):
         numberOfColors = int(raw_input("Veldu hversu marga liti þú vilt spila með? Veldu tölu á bili 2-8: "))
@@ -88,20 +88,22 @@ def main():
             print "Þú hefur unnið"
         if lost:
             print "Þú er hefur tapað"
-        print "------------------------------------------------------"
-        print "        Staðan á borði er"
-        print "------------------------------------------------------"
+        print "----------------------------------------------------------------------------"
+        print "                            Staðan á borði er"
+        print "----------------------------------------------------------------------------"
         print ""
         for row in mastermindObj.rows:
             if type(row) != int:
                 for color in row.colorList:
-                    print str(color.name).rjust(10),
-                print " | Result:\t",
-                print "Fjöldi Hvítra :" + str(row.hintWhite),
-                print " Fjöldi Svartra :" + str(row.hintBlack)
-        print "------------------------------------------------------"
+                    print str(color.name).ljust(10) + "\t",
+                print "\t | Hint:\t".rjust(2),
+                print "Fjöldi Hvítra : " + str(row.hintWhite),
+                print " Fjöldi Svartra : " + str(row.hintBlack)
+        print "----------------------------------------------------------------------------"
         print ""
-        
+        print "Þú átt " + str(mastermindObj.guessesLeft()) + " ágiskanir eftir"
+        print "Giskaðu aftur"
+        print ""
     
     
     
