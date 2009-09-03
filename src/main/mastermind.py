@@ -27,8 +27,18 @@ class Mastermind:
 #        random.shuffle(self.colors)
     
     # TODO leikja lógík til þess að setja hvítu og svörtu pinna í röð
+    # True, False = Unnið eða False,True = Tapað
     def gradePlayerChoice(self,guessColors):
-         pass
+        # ef jafnt tapar player
+        if (self.totalGuesses == len(self.rows)):
+            return False,True
+        # ef eins player vinnur
+        if (self.colors.__eq__(guessColors)):
+            return True,False
+        
+        # fara í gegnum guessColors og bera saman við self.colors
+        
+        return None,None #Eitthvað rangt
 
     def colorsToPlay(self):
         random.shuffle(self.colors)
