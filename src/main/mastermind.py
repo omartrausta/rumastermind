@@ -30,6 +30,20 @@ class Mastermind:
     # TODO leikja lógík til þess að setja hvítu og svörtu pinna í röð
     # True, False = Unnið eða False,True = Tapað
     def gradePlayerChoice(self,guessColors):
+        black = 0
+        white = 0
+        # finna svarta
+        for color in guessColors:
+            i = guessColors.index(color)
+            secretColor = self.colors[i]
+            print color.name
+            print secretColor.name
+            if color.name == secretColor.name:
+                black = black+1
+                print black
+        
+        
+        
         row1 = Row(guessColors, 1, 2)
         self.addToRows(row1)  
         # ef jafnt tapar player
@@ -56,6 +70,8 @@ class Mastermind:
                 idx+=1
         else:
             self.colors = self.colors[0:self.numbersOfColors]
+        for color in self.colors:
+            print color.name
     
     def addToRows(self,row):
         self.rows.remove(self.totalGuesses)
