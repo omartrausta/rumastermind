@@ -16,6 +16,7 @@ class Mastermind:
         self.numbersOfColors = numbersOfColors
         self.sameColor = sameColor
         self.totalGuesses = 0
+        self.numberOfGuesses = numberOfGuesses
         # Shufling the colors
         #self.shuffleColors()
         # Taking setting how many colors to play
@@ -45,6 +46,11 @@ class Mastermind:
         self.rows.remove(self.totalGuesses)
         self.rows.insert(self.totalGuesses,row)
         self.totalGuesses =+ 1
+    
+    # Ef number of guess og total guess eru jöfn og current lita röð ekki rétt 
+    
+    def guessesLeft(self):
+        return self.totalGuesses - self.numberOfGuesses
     
     def populateRows(self):
         for row in self.rows:
