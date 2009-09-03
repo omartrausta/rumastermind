@@ -164,13 +164,107 @@ class MyFrame2(wx.Frame):
         self.__do_layout()
         # end wxGlade
         
+    def b9Click(self, event):
+        self.button_9.SetBackgroundColour(colorArray[self.b_9Count])
+        self.increase(self.b_9Count)
+    
+    def b10Click(self, event):
+        self.button_10.SetBackgroundColour(colorArray[self.b_10Count])
+        self.increase(self.b_10Count)
+        
+    def b11Click(self, event):
+        self.button_11.SetBackgroundColour(colorArray[self.b_11Count])
+        self.increase(self.b_11Count)
+        
+    def b12Click(self, event):
+        self.button_12.SetBackgroundColour(colorArray[self.b_12Count])
+        self.increase(self.b_12Count)
+    
+    def b13Click(self, event):
+        self.button_13.SetBackgroundColour(colorArray[self.b_13Count])
+        self.increase(self.b_13Count)
+    
+    def b14Click(self, event):
+        self.button_14.SetBackgroundColour(colorArray[self.b_14Count])
+        self.increase(self.b_14Count)
+    
     def b15Click(self, event):
         self.button_15.SetBackgroundColour(colorArray[self.b_15Count])
         self.increase(self.b_15Count)
+    
+    def b16Click(self, event):
+        self.button_16.SetBackgroundColour(colorArray[self.b_16Count])
+        self.increase(self.b_16Count)
+    
+    def b17Click(self, event):
+        self.button_17.SetBackgroundColour(colorArray[self.b_17Count])
+        self.increase(self.b_16Count)
+    
+    def b18Click(self, event):
+        self.button_18.SetBackgroundColour(colorArray[self.b_18Count])
+        self.increase(self.b_18Count)
+    
+    def b19Click(self, event):
+        self.button_19.SetBackgroundColour(colorArray[self.b_19Count])
+        self.increase(self.b_19Count)
+    
+    def b20Click(self, event):
+        self.button_20.SetBackgroundColour(colorArray[self.b_20Count])
+        self.increase(self.b_20Count)
         
+    def b21Click(self, event):
+        self.button_21.SetBackgroundColour(colorArray[self.b_21Count])
+        self.increase(self.b_21Count)
         
+    def b22Click(self, event):
+        self.button_22.SetBackgroundColour(colorArray[self.b_22Count])
+        self.increase(self.b_22Count)
+    
+    def b23Click(self, event):
+        self.button_23.SetBackgroundColour(colorArray[self.b_23Count])
+        self.increase(self.b_23Count)
+    
+    def b24Click(self, event):
+        self.button_24.SetBackgroundColour(colorArray[self.b_24Count])
+        self.increase(self.b_24Count)
+    
+    def b25Click(self, event):
+        self.button_25.SetBackgroundColour(colorArray[self.b_25Count])
+        self.increase(self.b_25Count)
+    
+    def b26Click(self, event):
+        self.button_26.SetBackgroundColour(colorArray[self.b_26Count])
+        self.increase(self.b_26Count)
         
+    def b27Click(self, event):
+        self.button_27.SetBackgroundColour(colorArray[self.b_27Count])
+        self.increase(self.b_27Count)
+    
+    def b28Click(self, event):
+        self.button_28.SetBackgroundColour(colorArray[self.b_28Count])
+        self.increase(self.b_28Count)
+    
+    def b29Click(self, event):
+        self.button_29.SetBackgroundColour(colorArray[self.b_29Count])
+        self.increase(self.b_29Count)
+    
+    def b30Click(self, event):
+        self.button_30.SetBackgroundColour(colorArray[self.b_30Count])
+        self.increase(self.b_30Count)
+    
+    def b31Click(self, event):
+        self.button_31.SetBackgroundColour(colorArray[self.b_31Count])
+        self.increase(self.b_31Count)
         
+    def b32Click(self, event):
+        self.button_32.SetBackgroundColour(colorArray[self.b_32Count])
+        self.increase(self.b_32Count)
+        
+    def b33Click(self, event):
+        self.button_33.SetBackgroundColour(colorArray[self.b_33Count])
+        self.increase(self.b_33Count)
+    
+
     def __set_properties(self):
         # begin wxGlade: MyFrame2.__set_properties
         self.SetTitle("frame_3")
