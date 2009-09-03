@@ -30,7 +30,7 @@ class Mastermind:
     # True, False = Unnið eða False,True = Tapað
     def gradePlayerChoice(self,guessColors):
         # ef jafnt tapar player
-        if (self.totalGuesses == len(self.rows)):
+        if (self.totalGuesses == self.numberOfGuesses):
             return False,True
         # ef eins player vinnur
         if (self.colors.__eq__(guessColors)):
