@@ -12,7 +12,7 @@ import random
 class Mastermind:  
     def __init__(self,colors,numberOfGuesses,numbersOfColors,sameColor=False):
         self.colors = colors
-        self.rows = range(numberOfGuesses+1)
+        self.rows = range(numberOfGuesses)
         self.numbersOfColors = numbersOfColors
         self.sameColor = sameColor
         self.totalGuesses = 0
@@ -54,7 +54,10 @@ class Mastermind:
     
     def addToRows(self,row):
         self.rows.remove(self.totalGuesses)
-        self.rows.insert(self.totalGuesses,row)
+        if self.totalGuesses == len(self.rows):
+            self.rows.append(row)
+        else:
+            self.rows.insert(self.totalGuesses,row)
         self.totalGuesses =+ 1
     
     # Ef number of guess og total guess eru jöfn og current lita röð ekki rétt 
@@ -72,5 +75,7 @@ def main():
     mm = Mastermind(colors,8,4,True)
     for color in mm.colors:
         print color.encode("utf-8")
+        
+    print mm.populateRows()
     
 if __name__== "__main__": main()
