@@ -11,30 +11,30 @@ import wx
 colorArray = ['BLACK', 'GREEN', 'BROWN', 'PURPLE', 'RED', 'WHITE', 'BLUE', 'YELLOW', ]
 
 ID_B9 = 9
-ID_B15 = 10
-ID_B15 = 11
-ID_B15 = 12
-ID_B15 = 13
-ID_B15 = 14
+ID_B10 = 10
+ID_B11 = 11
+ID_B12 = 12
+ID_B13 = 13
+ID_B14 = 14
 ID_B15 = 15
-ID_B15 = 16
-ID_B15 = 17
-ID_B15 = 18
-ID_B15 = 19
-ID_B15 = 20
-ID_B15 = 21
-ID_B15 = 22
-ID_B15 = 23
-ID_B15 = 24
-ID_B15 = 25
-ID_B15 = 26
-ID_B15 = 27
-ID_B15 = 28
-ID_B15 = 29
-ID_B15 = 30
-ID_B15 = 31
-ID_B15 = 32
-ID_B15 = 33
+ID_B16 = 16
+ID_B17 = 17
+ID_B18 = 18
+ID_B19 = 19
+ID_B20 = 20
+ID_B21 = 21
+ID_B22 = 22
+ID_B23 = 23
+ID_B24 = 24
+ID_B25 = 25
+ID_B26 = 26
+ID_B27 = 27
+ID_B28 = 28
+ID_B29 = 29
+ID_B30 = 30
+ID_B31 = 31
+ID_B32 = 32
+ID_B33 = 33
 
 
 
@@ -268,8 +268,8 @@ class MyFrame2(wx.Frame):
     def __set_properties(self):
         # begin wxGlade: MyFrame2.__set_properties
         self.SetTitle("frame_3")
-        self.button_15.SetBackgroundColour('RED')
-        self.button_16.SetBackgroundColour('BLACK')
+        #self.button_15.SetBackgroundColour('RED')
+        #self.button_16.SetBackgroundColour('BLACK')
         # end wxGlade
 
     def __do_layout(self):
