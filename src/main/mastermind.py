@@ -1,5 +1,6 @@
 # encoding: utf-8
 import random
+from main.row import Row
 
 """ 
     Mastermind game class, this class provides the most methods which are
@@ -29,16 +30,20 @@ class Mastermind:
     # TODO leikja lógík til þess að setja hvítu og svörtu pinna í röð
     # True, False = Unnið eða False,True = Tapað
     def gradePlayerChoice(self,guessColors):
+        row1 = Row(guessColors, 1, 2)
+        self.addToRows(row1)  
         # ef jafnt tapar player
-        if (self.totalGuesses == self.numberOfGuesses):
+        if (self.totalGuesses == self.numberOfGuesses) and not (self.colors.__eq__(guessColors)):
             return False,True
         # ef eins player vinnur
         if (self.colors.__eq__(guessColors)):
             return True,False
-        
+   
+       
         # fara í gegnum guessColors og bera saman við self.colors
         
-        return None,None #Eitthvað rangt
+        return False,False #Eitthvað rangt
+    
 
     def colorsToPlay(self):
         random.shuffle(self.colors)
