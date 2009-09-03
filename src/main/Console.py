@@ -87,7 +87,7 @@ def main():
         for row in mastermindObj.rows:
             if type(row) != int:
                 for color in row.colorList:
-                    print str(color.name).ljust(10) + "\t",
+                    print str(color.name).ljust(6) + "\t",
                 print "\t | Hint:\t".rjust(2),
                 print "Fjöldi Hvítra : " + str(row.hintWhite),
                 print " Fjöldi Svartra : " + str(row.hintBlack)

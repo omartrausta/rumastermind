@@ -1,5 +1,6 @@
 # encoding: utf-8
 import random
+import copy
 from main.row import Row
 
 """ 
@@ -32,6 +33,9 @@ class Mastermind:
     def gradePlayerChoice(self,guessColors):
         black = 0
         white = 0
+        common = 0
+        secretColorsUnused = copy.copy(self.colors)
+        
         # finna svarta
         for color in guessColors:
             i = guessColors.index(color)
@@ -41,10 +45,16 @@ class Mastermind:
             if color.name == secretColor.name:
                 black = black+1
                 print black
+            for secretColor in secretColorsUnused:
+                if secretColor.name == color.name:
+                    common = common+1
+                    secretColorsUnused.remove(secretColor)
+                    print "common", common
+        white = common - black
         
         
         
-        row1 = Row(guessColors, 1, 2)
+        row1 = Row(guessColors, black, white)
         self.addToRows(row1)  
         # ef jafnt tapar player
         if (self.totalGuesses == self.numberOfGuesses) and not (self.colors.__eq__(guessColors)):
