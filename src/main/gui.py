@@ -45,6 +45,8 @@ class MyFrame2(wx.Frame):
     countDict = {9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0, 17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0, 31:0, 32:0, 33:0}
     buttonMap = {0:[10, 11, 12, 13], 1:[14, 15, 16, 17], 2:[18, 19, 20, 21], 3:[22, 23, 24, 25], 4:[26, 27, 28, 29], 5:[30, 31, 32, 33]}
     rowCount = 0 
+    colorList = []
+    master = None
        
     def increase(self, clickCount):
         if self.countDict[clickCount] == 7:
@@ -141,6 +143,9 @@ class MyFrame2(wx.Frame):
 
         self.__set_properties()
         self.__do_layout()
+        
+        self.colorList = self.makeColors()
+        self.master = Mastermind(self.colorList, 6, 4)
         # end wxGlade
         
     def getPlayerGuess(self):
@@ -155,6 +160,7 @@ class MyFrame2(wx.Frame):
                 return []
             else:
                 guessRow.append(Color(colorArray[self.countDict[button]]))
+        self.rowCount = self.rowCount+1
         return guessRow
 
         #guessRow = [Color('WHITE'), Color('BLUE'), Color('BLACK'), Color('YELLOW')]
@@ -174,14 +180,13 @@ class MyFrame2(wx.Frame):
         
     def b9Click(self, event):
         won, lost = False, False
-        colorList = self.makeColors()
-        master = Mastermind(colorList, 6, 4)
         guess = self.getPlayerGuess()
         if len(guess) != 0:
-            won, lost = master.gradePlayerChoice(guess)
-            litur = self.button_10.BackgroundColour
-            strLitur = wx.TheColourDatabase.FindName(litur)
-            print strLitur
+            won, lost = self.master.gradePlayerChoice(guess)
+            if won:
+                self.label_1.SetLabel(self,"Þú Vannst")
+            #litur = self.button_10.BackgroundColour
+            #strLitur = wx.TheColourDatabase.FindName(litur)
             print won, lost
     
     def b10Click(self, event):
