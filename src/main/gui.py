@@ -70,23 +70,27 @@ class MyFrame2(wx.Frame):
         self.panel_6 = wx.Panel(self, -1)
         
         #Labels
-        self.label_2 = wx.StaticText(self, -1, "label_2")
-        self.label_3 = wx.StaticText(self, -1, "label_3")
+        self.label_2 = wx.StaticText(self, -1, "Hvítur")
+        self.label_3 = wx.StaticText(self, -1, "Svartur")
+        #self.label_1 = wx.StaticText(self, -1, "label_1")
+
+        # Hvítt og svart hint fyrir player
         self.label_4 = wx.StaticText(self, -1, "label_4")
         self.label_5 = wx.StaticText(self, -1, "label_5")
         self.label_6 = wx.StaticText(self, -1, "label_6")
         self.label_7 = wx.StaticText(self, -1, "label_7")
         self.label_8 = wx.StaticText(self, -1, "label_8")
         self.label_9 = wx.StaticText(self, -1, "label_9")
+        self.label_10 = wx.StaticText(self, -1, "label_10")
+        self.label_11 = wx.StaticText(self, -1, "label_11")
         self.label_12 = wx.StaticText(self, -1, "label_12")
         self.label_13 = wx.StaticText(self, -1, "label_13")
         self.label_14 = wx.StaticText(self, -1, "label_14")
         self.label_15 = wx.StaticText(self, -1, "label_15")
-        self.label_17 = wx.StaticText(self, -1, "label_17")
-        self.label_10 = wx.StaticText(self, -1, "label_10")
-        self.label_11 = wx.StaticText(self, -1, "label_11")
-        self.label_1 = wx.StaticText(self, -1, "label_1")
+        
+        
         self.label_16 = wx.StaticText(self, -1, "label_16")
+        self.label_17 = wx.StaticText(self, -1, "label_17")
         
         #Buttons
         self.button_9 = wx.Button(self, ID_B9, "Leika")
@@ -303,7 +307,7 @@ class MyFrame2(wx.Frame):
 
     def __set_properties(self):
         # begin wxGlade: MyFrame2.__set_properties
-        self.SetTitle("frame_3")
+        self.SetTitle("RuMastermind")
         #self.button_15.SetBackgroundColour('RED')
         #self.button_16.SetBackgroundColour('BLACK')
         # end wxGlade
@@ -358,7 +362,7 @@ class MyFrame2(wx.Frame):
         grid_sizer_2.Add(self.panel_4, 1, wx.EXPAND, 0)
         grid_sizer_2.Add(self.panel_5, 1, wx.EXPAND, 0)
         grid_sizer_2.Add(self.panel_6, 1, wx.EXPAND, 0)
-        grid_sizer_2.Add(self.label_1, 0, 0, 0)
+        #grid_sizer_2.Add(self.label_1, 0, 0, 0)
         grid_sizer_2.Add(self.button_9, 0, 0, 0)
         sizer_3.Add(grid_sizer_2, 1, wx.EXPAND, 0)
         self.SetSizer(sizer_3)
