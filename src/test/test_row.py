@@ -1,3 +1,4 @@
+# encoding: utf-8
 import unittest
 from main.row import Row
 from main.color import Color
