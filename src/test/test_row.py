@@ -11,13 +11,9 @@ class rowTest(unittest.TestCase):
         result = Row(self.colorList)
         gulur = Color("gulur","path")
         result.colorList.append(gulur)
-        print result.hintBlack
-        print result.hintWhite 
-        result.hintBlack =+ 1
-        result.hintWhite =+ 1
-        print result.hintBlack
-        print result.hintWhite
-        print result.colorList
+        result.hintBlack += 1
+        result.hintWhite += 1
+        print "Litalisti:", result.colorList
         self.assertEqual(len(result.colorList),1, 'Test féll')
         
 if __name__ == '__main__': unittest.main()
