@@ -187,8 +187,8 @@ class MyFrame2(wx.Frame):
     def setHintLabels(self):
         row = self.master.rows[self.rowCount-1]
         if self.rowCount-1 == 0:
-            self.label_14 = wx.StaticText(self, -1, str(row.hintWhite))
-            self.label_15 = wx.StaticText(self, -1, str(row.hintBlack))
+            self.label_14.SetLabel(str(row.hintWhite))
+            self.label_15.SetLabel(str(row.hintBlack))
 
         print "Fjöldi Hvítra : " + str(row.hintWhite)
         print "Fjöldi Svartra : " + str(row.hintBlack)
