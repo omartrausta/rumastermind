@@ -4,13 +4,15 @@
 #from wx._core import EVT_BUTTON
 from main.mastermind import Mastermind
 from main.color import Color
+from wxPython._misc import wxMessageBox
+from wxPython._core import wxOK
 
 import wx
 
 # begin wxGlade: extracode
 # end wxGlade
 
-colorArray = ['', 'BLACK', 'GREEN', 'BROWN', 'PURPLE', 'RED', 'WHITE', 'BLUE', 'YELLOW', ]
+colorArray = ['', 'BLACK', 'GREEN', 'BROWN', 'PURPLE', 'RED', 'WHITE', 'BLUE', 'YELLOW', 'BLACK' ]
 
 ID_B9 = 9
 ID_B10 = 10
@@ -48,11 +50,11 @@ class MyFrame2(wx.Frame):
     colorList = []
     master = None
        
-    def increase(self, clickCount):
-        if self.countDict[clickCount] == 7:
-            self.countDict[clickCount] = 0
+    def increase(self, buttonNo):
+        if self.countDict[buttonNo] == 8:
+            self.countDict[buttonNo] = 1
         else:
-            self.countDict[clickCount] = self.countDict[clickCount] + 1
+            self.countDict[buttonNo] = self.countDict[buttonNo] + 1
     
     def __init__(self, *args, **kwds):
         # begin wxGlade: MyFrame2.__init__
@@ -138,7 +140,8 @@ class MyFrame2(wx.Frame):
         self.Bind(wx.EVT_BUTTON, self.b30Click, id=ID_B30) 
         self.Bind(wx.EVT_BUTTON, self.b31Click, id=ID_B31) 
         self.Bind(wx.EVT_BUTTON, self.b32Click, id=ID_B32) 
-        self.Bind(wx.EVT_BUTTON, self.b33Click, id=ID_B33) 
+        self.Bind(wx.EVT_BUTTON, self.b33Click, id=ID_B33)
+        self.Bind(wx.EVT_BUTTON, self.onFinish, id=wxOK) 
  
 
         self.__set_properties()
@@ -152,15 +155,19 @@ class MyFrame2(wx.Frame):
         
         print "get player guess"
         count = self.rowCount
+        print "count: ", count
         guessRow = []
         print "Button colors"
         buttonRow = self.buttonMap[count]
         for button in buttonRow:
             if colorArray[self.countDict[button]] == "":
+                print "Vantar lit á takka"
                 return []
             else:
+                print colorArray[self.countDict[button]]
                 guessRow.append(Color(colorArray[self.countDict[button]]))
-        self.rowCount = self.rowCount+1
+        self.rowCount = self.rowCount + 1
+        print "Skilar guessRow"
         return guessRow
 
         #guessRow = [Color('WHITE'), Color('BLUE'), Color('BLACK'), Color('YELLOW')]
@@ -183,11 +190,15 @@ class MyFrame2(wx.Frame):
         guess = self.getPlayerGuess()
         if len(guess) != 0:
             won, lost = self.master.gradePlayerChoice(guess)
-            if won:
-                self.label_1.SetLabel(self,"Þú Vannst")
+            print "won lost"
+            print won
+        if won == True:
+            dlg = wxMessageBox("Þú Vannst", "Til Hamingju", wxOK)
+
+            #dlg.ShowModal()
+            #self.label_1.SetLabel("Þú Vannst")
             #litur = self.button_10.BackgroundColour
             #strLitur = wx.TheColourDatabase.FindName(litur)
-            print won, lost
     
     def b10Click(self, event):
         self.button_10.SetBackgroundColour(colorArray[self.countDict[10] + 1])
@@ -285,6 +296,8 @@ class MyFrame2(wx.Frame):
         self.button_33.SetBackgroundColour(colorArray[self.countDict[33] + 1])
         self.increase(33)
     
+    def onFinish(self, event):
+        self.Close(True)
 
     def __set_properties(self):
         # begin wxGlade: MyFrame2.__set_properties

@@ -36,7 +36,7 @@ class Mastermind:
         common = 0
         secretColorsUnused = copy.copy(self.colors)
         
-        print "finna svarta"
+        #print "finna svarta"
         for color in guessColors:
             i = guessColors.index(color)
             secretColor = self.colors[i]
@@ -44,16 +44,16 @@ class Mastermind:
             print secretColor.name
             if color.name == secretColor.name:
                 black = black+1
-                print black
-        print "finna hvíta"
+                #print black
+        #print "finna hvíta"
         for color in guessColors:
             for secretColor in secretColorsUnused:
-                print color.name
-                print secretColor.name
+                #print color.name
+                #print secretColor.name
                 if secretColor.name == color.name:
                     common = common+1
                     secretColorsUnused.remove(secretColor)
-                    print "common", common
+                    #print "common", common
         white = common - black
         
         
