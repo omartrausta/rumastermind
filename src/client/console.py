@@ -95,7 +95,7 @@ def main():
             print "Þú hefur unnið"
             break
         if lost:
-            print "Þú er hefur tapað"
+            print "Þú hefur tapað"
             break
         if not won and not lost:
             print "Þú átt " + str(mastermindObj.guessesLeft()) + " ágiskanir eftir"
