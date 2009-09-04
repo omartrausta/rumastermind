@@ -1,8 +1,8 @@
 README.txt > uppfært 04.09.09
 Leiðbeiningar
 
-1. Til þess að geta keyrt client forritin þarf að setja PYTHONPATH á src möppuna í verkefninu, ath skipta þarf "Directory" 
-    í möppunni sem verkefnið er geymt í
+1. Til þess að geta keyrt client forritin þarf að setja PYTHONPATH á src möppuna í verkefninu, 
+    ath skipta þarf "Directory" í möppunni sem verkefnið er geymt í
     
     Windows:
         set PYTHONPATH=%PYTHONPATH%;C:\Directory\src
