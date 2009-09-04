@@ -204,8 +204,10 @@ class MyFrame2(wx.Frame):
             print won
         if won == True:
             dlgWon = wxMessageBox("Þú Vannst", "Til Hamingju", wxOK)
+            self.onFinish()
         if lost == True:
             dlgLost = wxMessageBox("Þú tapaðir", "Því miður", wxOK)
+            self.onFinish()
 
             #dlg.ShowModal()
             #self.label_1.SetLabel("Þú Vannst")
@@ -308,7 +310,7 @@ class MyFrame2(wx.Frame):
         self.button_33.SetBackgroundColour(colorArray[self.countDict[33] + 1])
         self.increase(33)
     
-    def onFinish(self, event):
+    def onFinish(self):
         self.Close(True)
 
     def __set_properties(self):
