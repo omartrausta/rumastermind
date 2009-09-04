@@ -100,10 +100,10 @@ class MyFrame2(wx.Frame):
         
         #Buttons
         self.button_9 = wx.Button(self, ID_B9, "Leika")
-        self.button_10 = wx.Button(self, ID_B10, "10")
-        self.button_11 = wx.Button(self, ID_B11, "11")
-        self.button_12 = wx.Button(self, ID_B12, "12")
-        self.button_13 = wx.Button(self, ID_B13, "13")
+        self.button_10 = wx.Button(self, ID_B10, "")
+        self.button_11 = wx.Button(self, ID_B11, "")
+        self.button_12 = wx.Button(self, ID_B12, "")
+        self.button_13 = wx.Button(self, ID_B13, "")
         self.button_14 = wx.Button(self, ID_B14, "")
         self.button_15 = wx.Button(self, ID_B15, "")
         self.button_16 = wx.Button(self, ID_B16, "")        
