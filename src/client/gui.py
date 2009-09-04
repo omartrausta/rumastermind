@@ -227,11 +227,9 @@ class MyFrame2(wx.Frame):
             print "won lost"
             print won
         if won == True:
-            dlgWon = wxMessageBox("Þú Vannst", "Til Hamingju", wxOK)
-            self.onFinish()
+            wxMessageBox("Þú Vannst", "Til Hamingju", wxOK)
         if lost == True:
-            dlgLost = wxMessageBox("Þú tapaðir", "Því miður", wxOK)
-            self.onFinish()
+            wxMessageBox("Þú tapaðir", "Því miður", wxOK) 
 
             #dlg.ShowModal()
             #self.label_1.SetLabel("Þú Vannst")
