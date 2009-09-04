@@ -34,8 +34,8 @@ class Mastermind:
         for color in guessColors:
             i = guessColors.index(color)
             secretColor = self.colors[i]
-            print color.name
-            print secretColor.name
+            #print color.name
+            #print secretColor.name
             if color.name == secretColor.name:
                 black = black+1
                 #print black
@@ -72,8 +72,10 @@ class Mastermind:
                 idx+=1
         else:
             self.colors = self.colors[0:self.numbersOfColors]
-        for color in self.colors:
-            print color.name
+
+# ATH. Secret Code sést ef þetta er uncommentað   
+#        for color in self.colors:
+#            print color.name
     
     def addToRows(self,row):
         self.rows.remove(self.totalGuesses)

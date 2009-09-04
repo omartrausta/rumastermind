@@ -16,3 +16,6 @@ Leiðbeiningar
     Nauðsynlegt er að setja upp wxPython til þess að geta keyrt gluggakerfisútgáfuna, 
     hana er hægt að sækja hér: http://www.wxpython.org/download.php#binaries.
     Til þess að keyra forritið í gluggaumhverfi þarf að skrifa: pyton gui.py
+    
+4. Til þess að sjá secret code:
+    Ef línur 77 og 78 í mastermind.py eru uncommentaðar er hægt að sjá lausnarliti eða secret code

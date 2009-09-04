@@ -164,21 +164,21 @@ class MyFrame2(wx.Frame):
         
     def getPlayerGuess(self):
         
-        print "get player guess"
+        #print "get player guess"
         count = self.rowCount
-        print "count: ", count
+        #print "count: ", count
         guessRow = []
-        print "Button colors"
+        #print "Button colors"
         buttonRow = self.buttonMap[count]
         for button in buttonRow:
             if colorArray[self.countDict[button]] == "":
-                print "Vantar lit á takka"
+                #print "Vantar lit á takka"
                 return []
             else:
-                print colorArray[self.countDict[button]]
+                #print colorArray[self.countDict[button]]
                 guessRow.append(Color(colorArray[self.countDict[button]]))
         self.rowCount = self.rowCount + 1
-        print "Skilar guessRow"
+        #print "Skilar guessRow"
         return guessRow
         #guessRow = [Color('WHITE'), Color('BLUE'), Color('BLACK'), Color('YELLOW')]
    
@@ -224,8 +224,8 @@ class MyFrame2(wx.Frame):
         if len(guess) != 0:
             won, lost = self.master.gradePlayerChoice(guess)
             self.setHintLabels()
-            print "won lost"
-            print won
+            #print "won lost"
+            #print won
         if won == True:
             wxMessageBox("Þú Vannst", "Til Hamingju", wxOK)
         if lost == True:
