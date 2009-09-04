@@ -106,26 +106,26 @@ class MyFrame2(wx.Frame):
         self.button_11 = wx.Button(self, ID_B11, "")
         self.button_12 = wx.Button(self, ID_B12, "")
         self.button_13 = wx.Button(self, ID_B13, "")
-        self.button_14 = wx.Button(self, ID_B14, "14")
-        self.button_15 = wx.Button(self, ID_B15, "15")
-        self.button_16 = wx.Button(self, ID_B16, "16")        
-        self.button_17 = wx.Button(self, ID_B17, "17")
-        self.button_18 = wx.Button(self, ID_B18, "18")
-        self.button_19 = wx.Button(self, ID_B19, "19")
-        self.button_20 = wx.Button(self, ID_B20, "20")       
-        self.button_21 = wx.Button(self, ID_B21, "21")
-        self.button_22 = wx.Button(self, ID_B22, "22")
-        self.button_23 = wx.Button(self, ID_B23, "23")
-        self.button_24 = wx.Button(self, ID_B24, "24")       
-        self.button_25 = wx.Button(self, ID_B25, "25")
-        self.button_26 = wx.Button(self, ID_B26, "26")       
-        self.button_27 = wx.Button(self, ID_B27, "27")
-        self.button_28 = wx.Button(self, ID_B28, "28")       
-        self.button_29 = wx.Button(self, ID_B29, "29")
-        self.button_30 = wx.Button(self, ID_B30, "30")
-        self.button_31 = wx.Button(self, ID_B31, "31")
-        self.button_32 = wx.Button(self, ID_B32, "32")
-        self.button_33 = wx.Button(self, ID_B33, "33")
+        self.button_14 = wx.Button(self, ID_B14, "")
+        self.button_15 = wx.Button(self, ID_B15, "")
+        self.button_16 = wx.Button(self, ID_B16, "")        
+        self.button_17 = wx.Button(self, ID_B17, "")
+        self.button_18 = wx.Button(self, ID_B18, "")
+        self.button_19 = wx.Button(self, ID_B19, "")
+        self.button_20 = wx.Button(self, ID_B20, "")       
+        self.button_21 = wx.Button(self, ID_B21, "")
+        self.button_22 = wx.Button(self, ID_B22, "")
+        self.button_23 = wx.Button(self, ID_B23, "")
+        self.button_24 = wx.Button(self, ID_B24, "")       
+        self.button_25 = wx.Button(self, ID_B25, "")
+        self.button_26 = wx.Button(self, ID_B26, "")       
+        self.button_27 = wx.Button(self, ID_B27, "")
+        self.button_28 = wx.Button(self, ID_B28, "")       
+        self.button_29 = wx.Button(self, ID_B29, "")
+        self.button_30 = wx.Button(self, ID_B30, "")
+        self.button_31 = wx.Button(self, ID_B31, "")
+        self.button_32 = wx.Button(self, ID_B32, "")
+        self.button_33 = wx.Button(self, ID_B33, "")
         
         # Button Binder
         self.Bind(wx.EVT_BUTTON, self.b9Click, id=ID_B9)
@@ -189,9 +189,24 @@ class MyFrame2(wx.Frame):
         if self.rowCount-1 == 0:
             self.label_14.SetLabel(str(row.hintWhite))
             self.label_15.SetLabel(str(row.hintBlack))
-
-        print "Fjöldi Hvítra : " + str(row.hintWhite)
-        print "Fjöldi Svartra : " + str(row.hintBlack)
+        elif self.rowCount-1 == 1:
+            self.label_12.SetLabel(str(row.hintWhite))
+            self.label_13.SetLabel(str(row.hintBlack))
+        elif self.rowCount-1 == 2:
+            self.label_10.SetLabel(str(row.hintWhite))
+            self.label_11.SetLabel(str(row.hintBlack))
+        elif self.rowCount-1 == 3:
+            self.label_8.SetLabel(str(row.hintWhite))
+            self.label_9.SetLabel(str(row.hintBlack))
+        elif self.rowCount-1 == 4:
+            self.label_6.SetLabel(str(row.hintWhite))
+            self.label_7.SetLabel(str(row.hintBlack))
+        else:
+            self.label_4.SetLabel(str(row.hintWhite))
+            self.label_5.SetLabel(str(row.hintBlack))
+        
+#        print "Fjöldi Hvítra : " + str(row.hintWhite)
+#        print "Fjöldi Svartra : " + str(row.hintBlack)
          
         
     def makeColors(self):
