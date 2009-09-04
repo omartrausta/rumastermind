@@ -75,22 +75,28 @@ class MyFrame2(wx.Frame):
         #self.label_1 = wx.StaticText(self, -1, "label_1")
 
         # Hvítt og svart hint fyrir player
-        self.label_4 = wx.StaticText(self, -1, "label_4")
-        self.label_5 = wx.StaticText(self, -1, "label_5")
-        self.label_6 = wx.StaticText(self, -1, "label_6")
-        self.label_7 = wx.StaticText(self, -1, "label_7")
-        self.label_8 = wx.StaticText(self, -1, "label_8")
-        self.label_9 = wx.StaticText(self, -1, "label_9")
-        self.label_10 = wx.StaticText(self, -1, "label_10")
-        self.label_11 = wx.StaticText(self, -1, "label_11")
-        self.label_12 = wx.StaticText(self, -1, "label_12")
-        self.label_13 = wx.StaticText(self, -1, "label_13")
-        self.label_14 = wx.StaticText(self, -1, "label_14")
-        self.label_15 = wx.StaticText(self, -1, "label_15")
+        # röð 6
+        self.label_4 = wx.StaticText(self, -1, " ") # hvítt hint
+        self.label_5 = wx.StaticText(self, -1, " ") # svart hint
+        # röð 5
+        self.label_6 = wx.StaticText(self, -1, " ") # hvítt hint
+        self.label_7 = wx.StaticText(self, -1, " ") # svart hint
+        # röð 4
+        self.label_8 = wx.StaticText(self, -1, " ") # hvítt hint
+        self.label_9 = wx.StaticText(self, -1, " ") # svart hint
+        # röð 3
+        self.label_10 = wx.StaticText(self, -1, " ") # hvítt hint
+        self.label_11 = wx.StaticText(self, -1, " ") # svart hint
+        # röð 2
+        self.label_12 = wx.StaticText(self, -1, " ") # hvítt hint
+        self.label_13 = wx.StaticText(self, -1, " ") # svart hint
+        # röð 1
+        self.label_14 = wx.StaticText(self, -1, " ") # hvítt hint
+        self.label_15 = wx.StaticText(self, -1, " ") # svart hint
         
         
-        self.label_16 = wx.StaticText(self, -1, "label_16")
-        self.label_17 = wx.StaticText(self, -1, "label_17")
+        self.label_16 = wx.StaticText(self, -1, " ") # label_16: uppfæra þegar leikur klárast. Birta liti forrits.
+        self.label_17 = wx.StaticText(self, -1, " ") # label_17
         
         #Buttons
         self.button_9 = wx.Button(self, ID_B9, "Leika")
