@@ -23,13 +23,13 @@ class MastermindTestCase(unittest.TestCase):
      
     def testColorsToPlay(self):
         mastermind = Mastermind(self.colors,self.numberOfGuesses,self.numberOfColors,self.sameColor)
-        self.assertEqual(len(mastermind.colors),7)
+        self.assertEqual(len(mastermind.colors),7, 'Test féll')
 
     def testGradePlayerChoice(self):
         mastermind = Mastermind(self.colors,self.numberOfGuesses,self.numberOfColors)
         result = mastermind.gradePlayerChoice(self.guess1)
         tuple = False,False
-        self.assertEqual(result,tuple)    
+        self.assertEqual(result,tuple, 'Test féll')    
         
     def testRows(self):
         mastermind = Mastermind(self.colors,self.numberOfGuesses,self.numberOfColors)
@@ -37,12 +37,12 @@ class MastermindTestCase(unittest.TestCase):
         mastermind.addToRows(row1)
         row2 = Row(self.guess2)
         mastermind.addToRows(row2)
-        self.assertEqual(len(mastermind.rows),8)
+        self.assertEqual(len(mastermind.rows),8, 'Test féll')
         
     def testGuessesLeft(self):
         mastermind = Mastermind(self.colors,self.numberOfGuesses,self.numberOfColors)
         mastermind.gradePlayerChoice(self.guess1)
         result = mastermind.guessesLeft()
-        self.assertEqual(result,7)
+        self.assertEqual(result,7,  'Test féll')
         
 if __name__ == '__main__': unittest.main()

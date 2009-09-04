@@ -17,6 +17,6 @@ class rowTest(unittest.TestCase):
         print result.hintBlack
         print result.hintWhite
         print result.colorList
-        self.assertEqual(len(result.colorList),1)
+        self.assertEqual(len(result.colorList),1, 'Test féll')
         
 if __name__ == '__main__': unittest.main()

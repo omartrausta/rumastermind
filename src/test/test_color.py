@@ -1,5 +1,5 @@
 # encoding: utf-8
-import unittest, os
+import unittest
 from main.color import Color
 
 class colorTestCase(unittest.TestCase):    
