@@ -4,6 +4,7 @@
 #from wx._core import EVT_BUTTON
 from main.mastermind import Mastermind
 from main.color import Color
+from main.row import Row
 from wxPython._misc import wxMessageBox
 from wxPython._core import wxOK
 
@@ -46,6 +47,7 @@ class MyFrame2(wx.Frame):
     
     countDict = {9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0, 17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0, 31:0, 32:0, 33:0}
     buttonMap = {0:[10, 11, 12, 13], 1:[14, 15, 16, 17], 2:[18, 19, 20, 21], 3:[22, 23, 24, 25], 4:[26, 27, 28, 29], 5:[30, 31, 32, 33]}
+    labelMap = {0:(14,15),1:(12,13),2:(10,11),3:(8,9),4:(6,7),5:(4,5)}
     rowCount = 0 
     colorList = []
     master = None
@@ -104,26 +106,26 @@ class MyFrame2(wx.Frame):
         self.button_11 = wx.Button(self, ID_B11, "")
         self.button_12 = wx.Button(self, ID_B12, "")
         self.button_13 = wx.Button(self, ID_B13, "")
-        self.button_14 = wx.Button(self, ID_B14, "")
-        self.button_15 = wx.Button(self, ID_B15, "")
-        self.button_16 = wx.Button(self, ID_B16, "")        
-        self.button_17 = wx.Button(self, ID_B17, "")
-        self.button_18 = wx.Button(self, ID_B18, "")
-        self.button_19 = wx.Button(self, ID_B19, "")
-        self.button_20 = wx.Button(self, ID_B20, "")       
-        self.button_21 = wx.Button(self, ID_B21, "")
-        self.button_22 = wx.Button(self, ID_B22, "")
-        self.button_23 = wx.Button(self, ID_B23, "")
-        self.button_24 = wx.Button(self, ID_B24, "")       
-        self.button_25 = wx.Button(self, ID_B25, "")
-        self.button_26 = wx.Button(self, ID_B26, "")       
-        self.button_27 = wx.Button(self, ID_B27, "")
-        self.button_28 = wx.Button(self, ID_B28, "")       
-        self.button_29 = wx.Button(self, ID_B29, "")
-        self.button_30 = wx.Button(self, ID_B30, "")
-        self.button_31 = wx.Button(self, ID_B31, "")
-        self.button_32 = wx.Button(self, ID_B32, "")
-        self.button_33 = wx.Button(self, ID_B33, "")
+        self.button_14 = wx.Button(self, ID_B14, "14")
+        self.button_15 = wx.Button(self, ID_B15, "15")
+        self.button_16 = wx.Button(self, ID_B16, "16")        
+        self.button_17 = wx.Button(self, ID_B17, "17")
+        self.button_18 = wx.Button(self, ID_B18, "18")
+        self.button_19 = wx.Button(self, ID_B19, "19")
+        self.button_20 = wx.Button(self, ID_B20, "20")       
+        self.button_21 = wx.Button(self, ID_B21, "21")
+        self.button_22 = wx.Button(self, ID_B22, "22")
+        self.button_23 = wx.Button(self, ID_B23, "23")
+        self.button_24 = wx.Button(self, ID_B24, "24")       
+        self.button_25 = wx.Button(self, ID_B25, "25")
+        self.button_26 = wx.Button(self, ID_B26, "26")       
+        self.button_27 = wx.Button(self, ID_B27, "27")
+        self.button_28 = wx.Button(self, ID_B28, "28")       
+        self.button_29 = wx.Button(self, ID_B29, "29")
+        self.button_30 = wx.Button(self, ID_B30, "30")
+        self.button_31 = wx.Button(self, ID_B31, "31")
+        self.button_32 = wx.Button(self, ID_B32, "32")
+        self.button_33 = wx.Button(self, ID_B33, "33")
         
         # Button Binder
         self.Bind(wx.EVT_BUTTON, self.b9Click, id=ID_B9)
@@ -182,6 +184,15 @@ class MyFrame2(wx.Frame):
 
         #guessRow = [Color('WHITE'), Color('BLUE'), Color('BLACK'), Color('YELLOW')]
    
+    def setHintLabels(self):
+        row = self.master.rows[self.rowCount-1]
+        if self.rowCount-1 == 0:
+            self.label_14 = wx.StaticText(self, -1, str(row.hintWhite))
+            self.label_15 = wx.StaticText(self, -1, str(row.hintBlack))
+
+        print "Fjöldi Hvítra : " + str(row.hintWhite)
+        print "Fjöldi Svartra : " + str(row.hintBlack)
+         
         
     def makeColors(self):
         black = Color("BLACK")
@@ -200,6 +211,7 @@ class MyFrame2(wx.Frame):
         guess = self.getPlayerGuess()
         if len(guess) != 0:
             won, lost = self.master.gradePlayerChoice(guess)
+            self.setHintLabels()
             print "won lost"
             print won
         if won == True:
