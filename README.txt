@@ -10,9 +10,9 @@ Leiðbeiningar
         export PYTHONPATH=/home/user/Directory/src:$PATH
 
 2. Forrit keyrt í skel:
-    Til þess að keyra forritið í skel þarf að skrifa python console.py
+    Til þess að keyra forritið í skel þarf að skrifa: python console.py
 
 3. Forrit keyrt í gluggaumhverfi
     Nauðsynlegt er að setja upp wxPython til þess að geta keyrt gluggakerfisútgáfuna, 
     hana er hægt að sækja hér: http://www.wxpython.org/download.php#binaries.
-    Til þess að keyra forritið í gluggaumhverfi þarf að skrifa gui.py
+    Til þess að keyra forritið í gluggaumhverfi þarf að skrifa: pyton gui.py
