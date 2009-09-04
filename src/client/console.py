@@ -2,7 +2,6 @@
 from main.color import Color
 from main.mastermind import Mastermind
 
-
 def greetings():
     numberOfColors = 0
     numberOfGuesses = 0
@@ -11,7 +10,7 @@ def greetings():
     sameColorAllowedAnswers = ["y","n","Y","n","nei","já","j","J"]
     print ""
     print "----------------------------------------------------------------------------"
-    print "                        Velkominn í Mastermind"
+    print "                        Velkominn í RuMastermind"
     print "----------------------------------------------------------------------------"
     print ""
     while numberOfColors not in range(2,9):
@@ -68,8 +67,6 @@ def guessColors(colorList, numberOfColors):
         guessRow.append(Color(color))
     return guessRow
 
-        
-
 def main():
     colorList = makeColors()
     userIntput = greetings()
@@ -104,20 +101,7 @@ def main():
             print "Þú átt " + str(mastermindObj.guessesLeft()) + " ágiskanir eftir"
             print "Giskaðu aftur"
             print ""
-    
-    
-main() 
-    
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+if __name__== "__main__": main()
     
     

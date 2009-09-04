@@ -20,15 +20,9 @@ class Mastermind:
         self.totalGuesses = 0
         self.numberOfGuesses = numberOfGuesses
         # Shufling the colors
-        #self.shuffleColors()
-        # Taking setting how many colors to play
         self.colorsToPlay()
     
-#    # TODO þarf að útfæra meiri shuffle lógík ef sami litur er True    
-#    def shuffleColors(self):
-#        random.shuffle(self.colors)
-    
-    # TODO leikja lógík til þess að setja hvítu og svörtu pinna í röð
+    # leikja lógík til þess að setja hvítu og svörtu pinna í röð
     # True, False = Unnið eða False,True = Tapað
     def gradePlayerChoice(self,guessColors):
         black = 0
@@ -55,9 +49,7 @@ class Mastermind:
                     secretColorsUnused.remove(secretColor)
                     #print "common", common
         white = common - black
-        
-        
-        
+            
         row1 = Row(guessColors, black, white)
         self.addToRows(row1)  
         # ef jafnt tapar player
@@ -66,13 +58,9 @@ class Mastermind:
         # ef eins player vinnur
         if self.numbersOfColors == black:
             return True,False
-   
-       
-        # fara í gegnum guessColors og bera saman við self.colors
-        
-        return False,False #Eitthvað rangt
-    
-
+        # leikur heldur áfram    
+        return False,False
+      
     def colorsToPlay(self):
         random.shuffle(self.colors)
         if (self.sameColor):
@@ -94,22 +82,14 @@ class Mastermind:
         else:
             self.rows.insert(self.totalGuesses,row)
         self.totalGuesses += 1
-    
-    # Ef number of guess og total guess eru jöfn og current lita röð ekki rétt 
-    
+        
     def guessesLeft(self):
         return self.numberOfGuesses - self.totalGuesses 
-    
-    def populateRows(self):
-        for row in self.rows:
-            print row
-
-# TODO vantar að útfæra client kóða fyrir skipanalínuútgáfu    
+       
 def main():
     colors = ["Gulur","Rauður","Grænn","Blár","Svartur","Hvítur","Fjólublár","Brúnn"]
-    mm = Mastermind(colors,1,4,True)
-#    for color in mm.colors:
-#        print color.encode("utf-8")       
-    print mm.populateRows()
+    master = Mastermind(colors,1,4,True)
+    for color in master.colors:
+        print color.encode("utf-8")       
     
 if __name__== "__main__": main()
