@@ -15,6 +15,7 @@ import wx
 
 colorArray = ['', 'BLACK', 'GREEN', 'BROWN', 'PURPLE', 'RED', 'WHITE', 'BLUE', 'YELLOW', 'BLACK' ]
 
+ID_B1 = 1
 ID_B9 = 9
 ID_B10 = 10
 ID_B11 = 11
@@ -62,7 +63,8 @@ class MyFrame2(wx.Frame):
         # begin wxGlade: MyFrame2.__init__
         kwds["style"] = wx.DEFAULT_FRAME_STYLE
         wx.Frame.__init__(self, *args, **kwds)
-        
+        self.initalaze()
+    def initalaze(self):
         #Panels
         self.panel_1 = wx.Panel(self, -1)
         self.panel_2 = wx.Panel(self, -1)
@@ -72,9 +74,9 @@ class MyFrame2(wx.Frame):
         self.panel_6 = wx.Panel(self, -1)
         
         #Labels
-        self.label_2 = wx.StaticText(self, -1, "Hvítur")
-        self.label_3 = wx.StaticText(self, -1, "Svartur")
-        #self.label_1 = wx.StaticText(self, -1, "label_1")
+        self.label_2 = wx.StaticText(self, -1, " Hvítur")
+        self.label_3 = wx.StaticText(self, -1, " Svartur")
+        
 
         # Hvítt og svart hint fyrir player
         # röð 6
@@ -101,6 +103,7 @@ class MyFrame2(wx.Frame):
         self.label_17 = wx.StaticText(self, -1, " ") # label_17
         
         #Buttons
+        self.button_1 = wx.Button(self, ID_B1, "Nýr")
         self.button_9 = wx.Button(self, ID_B9, "Leika")
         self.button_10 = wx.Button(self, ID_B10, "")
         self.button_11 = wx.Button(self, ID_B11, "")
@@ -128,6 +131,7 @@ class MyFrame2(wx.Frame):
         self.button_33 = wx.Button(self, ID_B33, "")
         
         # Button Binder
+        self.Bind(wx.EVT_BUTTON, self.b1Click, id=ID_B1)
         self.Bind(wx.EVT_BUTTON, self.b9Click, id=ID_B9)
         self.Bind(wx.EVT_BUTTON, self.b10Click, id=ID_B10) 
         self.Bind(wx.EVT_BUTTON, self.b11Click, id=ID_B11) 
@@ -240,6 +244,13 @@ class MyFrame2(wx.Frame):
             #self.label_1.SetLabel("Þú Vannst")
             #litur = self.button_10.BackgroundColour
             #strLitur = wx.TheColourDatabase.FindName(litur)
+            
+    def b1Click(self, event): 
+        self.rowCount = 0 
+        self.colorList = []
+        self.master = None
+        frame_3.DestroyChildren()
+        self.initalaze()
     
     def b10Click(self, event):
         self.button_10.SetBackgroundColour(colorArray[self.countDict[10] + 1])
@@ -397,7 +408,7 @@ class MyFrame2(wx.Frame):
         grid_sizer_2.Add(self.panel_4, 1, wx.EXPAND, 0)
         grid_sizer_2.Add(self.panel_5, 1, wx.EXPAND, 0)
         grid_sizer_2.Add(self.panel_6, 1, wx.EXPAND, 0)
-        #grid_sizer_2.Add(self.label_1, 0, 0, 0)
+        grid_sizer_2.Add(self.button_1, 0, 0, 0)
         grid_sizer_2.Add(self.button_9, 0, 0, 0)
         sizer_3.Add(grid_sizer_2, 1, wx.EXPAND, 0)
         self.SetSizer(sizer_3)
