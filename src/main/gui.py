@@ -10,7 +10,7 @@ import wx
 # begin wxGlade: extracode
 # end wxGlade
 
-colorArray = ['','BLACK', 'GREEN', 'BROWN', 'PURPLE', 'RED', 'WHITE', 'BLUE', 'YELLOW', ]
+colorArray = ['', 'BLACK', 'GREEN', 'BROWN', 'PURPLE', 'RED', 'WHITE', 'BLUE', 'YELLOW', ]
 
 ID_B9 = 9
 ID_B10 = 10
@@ -42,8 +42,8 @@ ID_B33 = 33
 
 class MyFrame2(wx.Frame):
     
-    countDict = {9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0,26:0,27:0,28:0,29:0,30:0,31:0,32:0,33:0}
-    buttonMap = {0:[10,11,12,13],1:[14,15,16,17],2:[18,19,20,21],3:[22,23,24,25],4:[26,27,28,29],5:[30,31,32,33]}
+    countDict = {9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0, 17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0, 31:0, 32:0, 33:0}
+    buttonMap = {0:[10, 11, 12, 13], 1:[14, 15, 16, 17], 2:[18, 19, 20, 21], 3:[22, 23, 24, 25], 4:[26, 27, 28, 29], 5:[30, 31, 32, 33]}
     rowCount = 0 
        
     def increase(self, clickCount):
@@ -145,14 +145,20 @@ class MyFrame2(wx.Frame):
         
     def getPlayerGuess(self):
         
+        print "get player guess"
         count = self.rowCount
-        
+        guessRow = []
+        print "Button colors"
         buttonRow = self.buttonMap[count]
         for button in buttonRow:
-            pass   
-        
-        m = [Color('WHITE'),Color('BLUE'),Color('BLACK'),Color('YELLOW')]
-        return m   
+            if colorArray[self.countDict[button]] == "":
+                return []
+            else:
+                guessRow.append(Color(colorArray[self.countDict[button]]))
+        return guessRow
+
+        #guessRow = [Color('WHITE'), Color('BLUE'), Color('BLACK'), Color('YELLOW')]
+   
         
     def makeColors(self):
         black = Color("BLACK")
@@ -163,114 +169,115 @@ class MyFrame2(wx.Frame):
         white = Color("WHITE")
         blue = Color("BLUE")
         yellow = Color("YELLOW")
-        colorList = [black,green,brown,purple,red,white,blue,yellow] 
+        colorList = [black, green, brown, purple, red, white, blue, yellow] 
         return colorList
         
     def b9Click(self, event):
-        won,lost = False,False
+        won, lost = False, False
         colorList = self.makeColors()
         master = Mastermind(colorList, 6, 4)
         guess = self.getPlayerGuess()
-        won,lost = master.gradePlayerChoice(guess)
-        litur = self.button_10.BackgroundColour
-        strLitur = wx.TheColourDatabase.FindName(litur)
-        print strLitur
-        print won,lost
+        if len(guess) != 0:
+            won, lost = master.gradePlayerChoice(guess)
+            litur = self.button_10.BackgroundColour
+            strLitur = wx.TheColourDatabase.FindName(litur)
+            print strLitur
+            print won, lost
     
     def b10Click(self, event):
-        self.button_10.SetBackgroundColour(colorArray[self.countDict[10]+1])
+        self.button_10.SetBackgroundColour(colorArray[self.countDict[10] + 1])
         self.increase(10)
         
     def b11Click(self, event):
-        self.button_11.SetBackgroundColour(colorArray[self.countDict[11]])
+        self.button_11.SetBackgroundColour(colorArray[self.countDict[11] + 1])
         self.increase(11)
         
     def b12Click(self, event):
-        self.button_12.SetBackgroundColour(colorArray[self.countDict[12]])
+        self.button_12.SetBackgroundColour(colorArray[self.countDict[12] + 1])
         self.increase(12)
     
     def b13Click(self, event):
-        self.button_13.SetBackgroundColour(colorArray[self.countDict[13]])
+        self.button_13.SetBackgroundColour(colorArray[self.countDict[13] + 1])
         self.increase(13)
     
     def b14Click(self, event):
-        self.button_14.SetBackgroundColour(colorArray[self.countDict[14]])
+        self.button_14.SetBackgroundColour(colorArray[self.countDict[14] + 1])
         self.increase(14)
     
     def b15Click(self, event):
-        self.button_15.SetBackgroundColour(colorArray[self.countDict[15]])
+        self.button_15.SetBackgroundColour(colorArray[self.countDict[15] + 1])
         self.increase(15)
     
     def b16Click(self, event):
-        self.button_16.SetBackgroundColour(colorArray[self.countDict[16]])
+        self.button_16.SetBackgroundColour(colorArray[self.countDict[16] + 1])
         self.increase(16)
     
     def b17Click(self, event):
-        self.button_17.SetBackgroundColour(colorArray[self.countDict[17]])
+        self.button_17.SetBackgroundColour(colorArray[self.countDict[17] + 1])
         self.increase(17)
     
     def b18Click(self, event):
-        self.button_18.SetBackgroundColour(colorArray[self.countDict[18]])
+        self.button_18.SetBackgroundColour(colorArray[self.countDict[18] + 1])
         self.increase(18)
     
     def b19Click(self, event):
-        self.button_19.SetBackgroundColour(colorArray[self.countDict[19]])
+        self.button_19.SetBackgroundColour(colorArray[self.countDict[19] + 1])
         self.increase(19)
     
     def b20Click(self, event):
-        self.button_20.SetBackgroundColour(colorArray[self.countDict[20]])
+        self.button_20.SetBackgroundColour(colorArray[self.countDict[20] + 1])
         self.increase(20)
         
     def b21Click(self, event):
-        self.button_21.SetBackgroundColour(colorArray[self.countDict[21]])
+        self.button_21.SetBackgroundColour(colorArray[self.countDict[21] + 1])
         self.increase(21)
         
     def b22Click(self, event):
-        self.button_22.SetBackgroundColour(colorArray[self.countDict[22]])
+        self.button_22.SetBackgroundColour(colorArray[self.countDict[22] + 1])
         self.increase(22)
     
     def b23Click(self, event):
-        self.button_23.SetBackgroundColour(colorArray[self.countDict[23]])
+        self.button_23.SetBackgroundColour(colorArray[self.countDict[23] + 1])
         self.increase(23)
     
     def b24Click(self, event):
-        self.button_24.SetBackgroundColour(colorArray[self.countDict[24]])
+        self.button_24.SetBackgroundColour(colorArray[self.countDict[24] + 1])
         self.increase(24)
     
     def b25Click(self, event):
-        self.button_25.SetBackgroundColour(colorArray[self.countDict[25]])
+        self.button_25.SetBackgroundColour(colorArray[self.countDict[25] + 1])
         self.increase(25)
     
     def b26Click(self, event):
-        self.button_26.SetBackgroundColour(colorArray[self.countDict[26]])
+        self.button_26.SetBackgroundColour(colorArray[self.countDict[26] + 1])
         self.increase(26)
         
     def b27Click(self, event):
-        self.button_27.SetBackgroundColour(colorArray[self.countDict[27]])
+        self.button_27.SetBackgroundColour(colorArray[self.countDict[27] + 1])
         self.increase(27)
     
     def b28Click(self, event):
-        self.button_28.SetBackgroundColour(colorArray[self.countDict[28]])
+        self.button_28.SetBackgroundColour(colorArray[self.countDict[28] + 1])
         self.increase(28)
     
     def b29Click(self, event):
-        self.button_29.SetBackgroundColour(colorArray[self.countDict[29]])
+        self.button_29.SetBackgroundColour(colorArray[self.countDict[29] + 1])
         self.increase(29)
     
     def b30Click(self, event):
-        self.button_30.SetBackgroundColour(colorArray[self.countDict[30]])
+        self.button_30.SetBackgroundColour(colorArray[self.countDict[30] + 1])
         self.increase(30)
     
     def b31Click(self, event):
-        self.button_31.SetBackgroundColour(colorArray[self.countDict[31]])
+        self.button_31.SetBackgroundColour(colorArray[self.countDict[31] + 1])
         self.increase(31)
         
     def b32Click(self, event):
-        self.button_32.SetBackgroundColour(colorArray[self.countDict[32]])
+        self.button_32.SetBackgroundColour(colorArray[self.countDict[32] + 1])
         self.increase(32)
         
     def b33Click(self, event):
-        self.button_33.SetBackgroundColour(colorArray[self.countDict[33]])
+        self.button_33.SetBackgroundColour(colorArray[self.countDict[33] + 1])
         self.increase(33)
     
 
