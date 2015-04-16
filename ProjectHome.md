@@ -1,0 +1,1 @@
+Mastermind útfærður í Python
